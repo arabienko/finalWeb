@@ -57,7 +57,7 @@ public class StudentCourseServiceImpl implements StudentCourseService {
             }
             transaction.commit();
         } catch (DaoException | PersistentException e) {
-            LOGGER.debug("Service error findAll " + e);
+            LOGGER.debug("Service error findAll" + e);
             throw new ExceptionService(e);
         } finally {
             if (factory != null){
@@ -89,6 +89,7 @@ public class StudentCourseServiceImpl implements StudentCourseService {
             transaction.commit();
         } catch (DaoException | ExceptionService | PersistentException e) {
             LOGGER.debug("Service error find by id " + e);
+            assert transaction!=null;
             transaction.rollback();
             throw new ExceptionService(e);
         } finally {
