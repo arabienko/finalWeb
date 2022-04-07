@@ -1,0 +1,82 @@
+use `db_schoolOnline`;
+
+create TABLE `users` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT,
+	`login` VARCHAR(255) NOT NULL UNIQUE,
+	`password` CHAR(255) NOT NULL,
+	/*
+	 * 0 - администратор (Role.ADMINISTRATOR)
+	 * 1 - преподаватель (Role.TEACHER)
+	 * 2 - студент (Role.STUDENT)
+	 */
+	`role` TINYINT NOT NULL CHECK (`role` IN (0, 1, 2)),
+    CONSTRAINT PK_users PRIMARY KEY (`id`)
+) ;
+create TABLE `user_info` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT,
+	`surname` VARCHAR(255) NOT NULL,
+	`name` VARCHAR(255) NOT NULL,
+	`phone` VARCHAR(255) NOT NULL,
+	`pathImage` text DEFAULT NULL,
+    CONSTRAINT PK_user PRIMARY KEY (`id`),
+    CONSTRAINT FK_user FOREIGN KEY (`id`)
+     REFERENCES `users` (`id`)
+     ON update CASCADE
+     ON delete RESTRICT
+) ;
+create TABLE `subjects` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT,
+	`nameSubject` VARCHAR(255) NOT NULL,
+	`description` LONGTEXT NOT NULL,
+    CONSTRAINT PK_subject PRIMARY KEY (`id`)
+) ;
+create TABLE `teacher_subject`(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `teacher_id` INTEGER,
+    `subject_id` INTEGER,
+    CONSTRAINT PK_t_s PRIMARY KEY(`id`),
+    CONSTRAINT FK_teacher FOREIGN KEY (`teacher_id`)
+    REFERENCES `user_info` (`id`)
+    ON update CASCADE
+    ON delete RESTRICT,
+    CONSTRAINT FK_subject FOREIGN KEY (`subject_id`)
+    REFERENCES `subjects` (`id`)
+    ON update CASCADE
+    ON delete RESTRICT
+);
+create TABLE `teacher_course`(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `teacher_subject_id` INTEGER,
+    `start_date` date NOT NULL,
+	`end_date` date ,
+    CONSTRAINT PK_t_c PRIMARY KEY(`id`),
+    CONSTRAINT FK_teacher_subject FOREIGN KEY (`teacher_subject_id`)
+    REFERENCES `teacher_subject` (`id`)
+    ON update CASCADE
+    ON delete RESTRICT
+);
+create TABLE `student_course`(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+	`course_id` INTEGER,
+    `student_id` INTEGER,
+	`status` TINYTEXT CHECK (`status` IN ('preparing','training', 'finished')),
+    CONSTRAINT PK_st_course PRIMARY KEY(`id`),
+    CONSTRAINT FK_course FOREIGN KEY (`course_id`)
+    REFERENCES `teacher_course` (`id`)
+    ON update CASCADE
+    ON delete RESTRICT,
+    CONSTRAINT FK_student FOREIGN KEY (`student_id`)
+    REFERENCES `user_info` (`id`)
+    ON update CASCADE
+    ON delete RESTRICT
+);
+create TABLE `schedule`(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+	`course_id` INTEGER,
+    `date_time` VARCHAR(255),
+    CONSTRAINT PK_schedule PRIMARY KEY(`id`),
+    CONSTRAINT FK_sch_course FOREIGN KEY (`course_id`)
+    REFERENCES `teacher_course` (`id`)
+    ON update CASCADE
+    ON delete RESTRICT
+);

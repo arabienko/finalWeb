@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<courses>
+<studentCourse id="13">
+    <courseTeacher id="13">
+        <teacherSubject id="13">
+            <userTeacher id="13">
+                <surname>Lagunou</surname>
+                <name>Artur</name>
+                <phone>+375335456565</phone>
+                <pathPhoto>url1</pathPhoto>
+            </userTeacher>
+            <subject id="13">
+                <nameSubject>Basic</nameSubject>
+            </subject>
+        </teacherSubject>
+        <startDate>2023-01-10</startDate>
+        <endDate>2023-04-01</endDate>
+    </courseTeacher>
+    <userInfo id="13">
+        <surname>Kamarova</surname>
+        <name>Sanya</name>
+        <phone>+375295885225</phone>
+        <pathPhoto>url13</pathPhoto>
+    </userInfo>
+    <status>preparing</status>
+</studentCourse>
+    <studentCourse id="10">
+        <courseTeacher id="13">
+            <teacherSubject id="13">
+                <userTeacher id="13">
+                    <surname>Lagunou</surname>
+                    <name>Artur</name>
+                    <phone>+375335456565</phone>
+                    <pathPhoto>url1</pathPhoto>
+                </userTeacher>
+                <subject id="13">
+                    <nameSubject>Basic</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2023-01-10</startDate>
+            <endDate>2023-04-01</endDate>
+        </courseTeacher>
+        <userInfo id="13">
+            <surname>Kamarova</surname>
+            <name>Sanya</name>
+            <phone>+375295885225</phone>
+            <pathPhoto>url13</pathPhoto>
+        </userInfo>
+        <status>preparing</status>
+    </studentCourse>
+</courses>

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<courses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://arabienko.by/xmlparser/entity/curses"
+         xsi:schemaLocation="http://arabienko.by/xmlparser/entity/curses curses.xsd">
+
+    <studentCourse id="5">
+        <courseTeacher id="6">
+            <teacherSubject id="7">
+                <userTeacher id="8">
+                    <surname>Ivanou</surname>
+                    <name>Vanya</name>
+                    <phone>+375225552525</phone>
+                    <pathPhoto>url1</pathPhoto>
+                </userTeacher>
+                <subject id="9">
+                    <nameSubject>Java</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2022-05-10</startDate>
+            <endDate>2022-08-10</endDate>
+        </courseTeacher>
+        <userInfo id="10">
+            <surname>Hlebau</surname>
+            <name>Hleb</name>
+            <phone>+375335588996</phone>
+            <pathPhoto>url2</pathPhoto>
+        </userInfo>
+        <status>training</status>
+    </studentCourse>
+    <studentCourse id="4">
+        <courseTeacher id="5">
+            <teacherSubject id="6">
+                <userTeacher id="7">
+                    <surname>Marchunka</surname>
+                    <name>Natalia</name>
+                    <phone>+375298877799</phone>
+                    <pathPhoto>url9</pathPhoto>
+                </userTeacher>
+                <subject id="8" >
+                    <nameSubject>javascript</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2022-10-10</startDate>
+            <endDate>2022-12-25</endDate>
+        </courseTeacher>
+        <userInfo id="9">
+            <surname>Bandaranka</surname>
+            <name>Helena</name>
+            <phone>+375335588997</phone>
+            <pathPhoto>null</pathPhoto>
+        </userInfo>
+        <status>preparing</status>
+    </studentCourse>
+    <studentCourse id="8">
+        <courseTeacher id="9">
+            <teacherSubject id="10">
+                <userTeacher id="11">
+                    <surname>Global</surname>
+                    <name>Peter</name>
+                    <phone>+375295648558</phone>
+                    <pathPhoto>url8</pathPhoto>
+                </userTeacher>
+                <subject id="12">
+                    <nameSubject>c++</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2021-10-20</startDate>
+            <endDate>2022-01-10</endDate>
+        </courseTeacher>
+        <userInfo id="13">
+            <surname>Vasilisa</surname>
+            <name>Furia</name>
+            <phone>+375448978552</phone>
+            <pathPhoto>url5</pathPhoto>
+        </userInfo>
+        <status>finished</status>
+    </studentCourse>
+    <studentCourse id="2">
+        <courseTeacher id="3">
+            <teacherSubject id="4">
+                <userTeacher id="5">
+                    <surname>Eulampi</surname>
+                    <name>Hery</name>
+                    <phone>+375448582233</phone>
+                    <pathPhoto>url18</pathPhoto>
+                </userTeacher>
+                <subject id="6" >
+                    <nameSubject>PHP</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2022-12-10</startDate>
+            <endDate>2023-02-25</endDate>
+        </courseTeacher>
+        <userInfo id="7">
+            <surname>Klinkina</surname>
+            <name>Kalinkina</name>
+            <phone>+375292885566</phone>
+            <pathPhoto>url12</pathPhoto>
+        </userInfo>
+        <status>preparing</status>
+    </studentCourse>
+    <studentCourse id="7">
+        <courseTeacher id="9">
+            <teacherSubject id="11">
+                <userTeacher id="13">
+                    <surname>Paulusha</surname>
+                    <name>Paulic</name>
+                    <phone>+375297889895</phone>
+                    <pathPhoto>url18</pathPhoto>
+                </userTeacher>
+                <subject id="15" description="Base course. Programming">
+                    <nameSubject>Git</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2022-10-15</startDate>
+            <endDate>2022-12-20</endDate>
+        </courseTeacher>
+        <userInfo id="17">
+            <surname>Kirilin</surname>
+            <name>Kiril</name>
+            <phone>+375336988774</phone>
+            <pathPhoto>url10</pathPhoto>
+        </userInfo>
+        <status>finished</status>
+    </studentCourse>
+    <studentCourse id="13">
+        <courseTeacher id="13">
+            <teacherSubject id="13">
+                <userTeacher id="13">
+                    <surname>Lagunou</surname>
+                    <name>Artur</name>
+                    <phone>+375335456565</phone>
+                    <pathPhoto>url1</pathPhoto>
+                </userTeacher>
+                <subject id="13">
+                    <nameSubject>Basic</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2023-01-10</startDate>
+            <endDate>2023-04-01</endDate>
+        </courseTeacher>
+        <userInfo id="13">
+            <surname>Kamarova</surname>
+            <name>Sanya</name>
+            <phone>+375295885225</phone>
+            <pathPhoto>url13</pathPhoto>
+        </userInfo>
+        <status>preparing</status>
+    </studentCourse>
+    <studentCourse id="1">
+        <courseTeacher id="2">
+            <teacherSubject id="3">
+                <userTeacher id="4">
+                    <surname>Galunou</surname>
+                    <name>Grisha</name>
+                    <phone>+375336889963</phone>
+                    <pathPhoto>url85</pathPhoto>
+                </userTeacher>
+                <subject id="5">
+                    <nameSubject>C#</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2020-10-15</startDate>
+            <endDate>2020-12-30</endDate>
+        </courseTeacher>
+        <userInfo id="6">
+            <surname>Trusau</surname>
+            <name>Valod</name>
+            <phone>+375298556635</phone>
+            <pathPhoto>url11</pathPhoto>
+        </userInfo>
+        <status>finished</status>
+    </studentCourse>
+    <studentCourse id="12">
+        <courseTeacher id="10">
+            <teacherSubject id="8">
+                <userTeacher id="6">
+                    <surname>Pelein</surname>
+                    <name>Stephan</name>
+                    <phone>+375295885225</phone>
+                    <pathPhoto>url</pathPhoto>
+                </userTeacher>
+                <subject id="9">
+                    <nameSubject>Java</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2020-10-15</startDate>
+            <endDate>2021-01-20</endDate>
+        </courseTeacher>
+        <userInfo id="2">
+            <surname>Aliphanau</surname>
+            <name>Alina</name>
+            <phone>+375295882525</phone>
+            <pathPhoto>url55</pathPhoto>
+        </userInfo>
+        <status>finished</status>
+    </studentCourse>
+    <studentCourse id="4">
+        <courseTeacher id="14">
+            <teacherSubject id="24">
+                <userTeacher id="28">
+                    <surname>Serheeu</surname>
+                    <name>Serhei</name>
+                    <phone>+375335688996</phone>
+                    <pathPhoto>Url8</pathPhoto>
+                </userTeacher>
+                <subject id="8">
+                    <nameSubject>JavaScript</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2022-10-15</startDate>
+            <endDate>2023-01-20</endDate>
+        </courseTeacher>
+        <userInfo id="25">
+            <surname>Glebava</surname>
+            <name>Katarina</name>
+            <phone>+375448552325</phone>
+            <pathPhoto>url</pathPhoto>
+        </userInfo>
+        <status>preparing</status>
+    </studentCourse>
+    <studentCourse id="7">
+        <courseTeacher id="7">
+            <teacherSubject id="7">
+                <userTeacher id="7">
+                    <surname>Nora</surname>
+                    <name>Nora</name>
+                    <phone>+375295888523</phone>
+                    <pathPhoto>url</pathPhoto>
+                </userTeacher>
+                <subject id="8">
+                    <nameSubject>Delphi</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2022-12-15</startDate>
+            <endDate>2023-03-01</endDate>
+        </courseTeacher>
+        <userInfo id="8">
+            <surname>Kriket</surname>
+            <name>Gera</name>
+            <phone>+375336988552</phone>
+            <pathPhoto>uri</pathPhoto>
+        </userInfo>
+        <status>preparing</status>
+    </studentCourse>
+    <studentCourse id="12">
+        <courseTeacher id="12">
+            <teacherSubject id="12">
+                <userTeacher id="13">
+                    <surname>Tatchur</surname>
+                    <name>Tatu</name>
+                    <phone>+375295882552</phone>
+                    <pathPhoto>uri</pathPhoto>
+                </userTeacher>
+                <subject id="12">
+                    <nameSubject>Kotlin</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2022-01-20</startDate>
+            <endDate>2022-04-20</endDate>
+        </courseTeacher>
+        <userInfo id="15">
+            <surname>Manu</surname>
+            <name>Man</name>
+            <phone>+375336966336</phone>
+            <pathPhoto>uri6</pathPhoto>
+        </userInfo>
+        <status>finished</status>
+    </studentCourse>
+    <studentCourse id="3">
+        <courseTeacher id="8">
+            <teacherSubject id="5">
+                <userTeacher id="8">
+                    <surname>Galinina</surname>
+                    <name>Vanya</name>
+                    <phone>+375225552525</phone>
+                    <pathPhoto>url1</pathPhoto>
+                </userTeacher>
+                <subject id="9">
+                    <nameSubject>SQL</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2022-01-10</startDate>
+            <endDate>2022-03-10</endDate>
+        </courseTeacher>
+        <userInfo id="10">
+            <surname>Kalinina</surname>
+            <name>Natalia</name>
+            <phone>+375335588996</phone>
+            <pathPhoto>url2</pathPhoto>
+        </userInfo>
+        <status>finished</status>
+    </studentCourse>
+    <studentCourse id="4">
+        <courseTeacher id="5">
+            <teacherSubject id="6">
+                <userTeacher id="7">
+                    <surname>Marchunka</surname>
+                    <name>Natalia</name>
+                    <phone>+375298877799</phone>
+                    <pathPhoto>url9</pathPhoto>
+                </userTeacher>
+                <subject id="8" >
+                    <nameSubject>javascript</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2022-10-10</startDate>
+            <endDate>2022-12-25</endDate>
+        </courseTeacher>
+        <userInfo id="9">
+            <surname>Babrouski</surname>
+            <name>Alex</name>
+            <phone>+375335588997</phone>
+            <pathPhoto>null</pathPhoto>
+        </userInfo>
+        <status>preparing</status>
+    </studentCourse>
+    <studentCourse id="3">
+        <courseTeacher id="8">
+            <teacherSubject id="5">
+                <userTeacher id="8">
+                    <surname>Galinina</surname>
+                    <name>Vanya</name>
+                    <phone>+375225552525</phone>
+                    <pathPhoto>url1</pathPhoto>
+                </userTeacher>
+                <subject id="9">
+                    <nameSubject>SQL</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2022-01-10</startDate>
+            <endDate>2022-03-10</endDate>
+        </courseTeacher>
+        <userInfo id="10">
+            <surname>Pupkina</surname>
+            <name>Veola</name>
+            <phone>+375335588996</phone>
+            <pathPhoto>url2</pathPhoto>
+        </userInfo>
+        <status>finished</status>
+    </studentCourse>
+    <studentCourse id="4">
+        <courseTeacher id="5">
+            <teacherSubject id="6">
+                <userTeacher id="7">
+                    <surname>Marchunka</surname>
+                    <name>Natalia</name>
+                    <phone>+375298877799</phone>
+                    <pathPhoto>url9</pathPhoto>
+                </userTeacher>
+                <subject id="8" >
+                    <nameSubject>javascript</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2022-10-10</startDate>
+            <endDate>2022-12-25</endDate>
+        </courseTeacher>
+        <userInfo id="9">
+            <surname>Mischanka</surname>
+            <name>Pavel</name>
+            <phone>+375335588997</phone>
+            <pathPhoto>null</pathPhoto>
+        </userInfo>
+        <status>preparing</status>
+    </studentCourse>
+
+    <studentCourse id="12">
+        <courseTeacher id="12">
+            <teacherSubject id="12">
+                <userTeacher id="13">
+                    <surname>Tatchur</surname>
+                    <name>Tatu</name>
+                    <phone>+375295882552</phone>
+                    <pathPhoto>uri</pathPhoto>
+                </userTeacher>
+                <subject id="12">
+                    <nameSubject>Kotlin</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2022-01-20</startDate>
+            <endDate>2022-04-20</endDate>
+        </courseTeacher>
+        <userInfo id="15">
+            <surname>Gragarian</surname>
+            <name>Ignat</name>
+            <phone>+375295888998</phone>
+            <pathPhoto>uri6</pathPhoto>
+        </userInfo>
+        <status>finished</status>
+    </studentCourse>
+    <studentCourse id="3">
+        <courseTeacher id="8">
+            <teacherSubject id="5">
+                <userTeacher id="8">
+                    <surname>Krikun</surname>
+                    <name>Vanya</name>
+                    <phone>+375225552500</phone>
+                    <pathPhoto>url1</pathPhoto>
+                </userTeacher>
+                <subject id="9">
+                    <nameSubject>SQL</nameSubject>
+                </subject>
+            </teacherSubject>
+            <startDate>2022-01-10</startDate>
+            <endDate>2022-03-10</endDate>
+        </courseTeacher>
+        <userInfo id="10">
+            <surname>Blinkin</surname>
+            <name>Gosha</name>
+            <phone>+375338774114</phone>
+            <pathPhoto>url2</pathPhoto>
+        </userInfo>
+        <status>finished</status>
+    </studentCourse>
+</courses>

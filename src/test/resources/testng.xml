@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="SuiteParam" verbose="1">
+    <parameter name="testng" value=""/>
+    <parameter name="expectedDegree" value=""/>
+    <test name="TestParsing">
+        <classes>
+            <class name="by.arabienko.onlineSchool.service.xmlparser.DOM.StudentCourseDomBuilderTest">
+                <methods>
+                    <include name="testBuildStudentCurses"/>
+
+                </methods>
+            </class>
+            <class name="by.arabienko.onlineSchool.service.xmlparser.SAX.StudentCoursesSAXBuilderTest">
+                <methods>
+                    <include name="testBuildStudentCurses"/>
+
+                </methods>
+            </class>
+            <class name="by.arabienko.onlineSchool.service.xmlparser.StAX.StudentCourseStaxBuilderTest">
+                <methods>
+                    <include name="testBuildStudentCurses"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+</suite>

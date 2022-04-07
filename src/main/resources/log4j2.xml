@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Properties>
+        <property name="pattern_file">%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{5} - %msg%n
+        </property>
+        <property name="pattern_short">%d{HH:mm:ss} %-5level %logger{5} - %msg%n
+        </property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${pattern_short}"/>
+        </Console>
+
+        <File name="LogFile" fileName="C:/Users/User/Desktop/finalWeb/logs/Log.log" bufferedIO="true">
+            <PatternLayout pattern="${pattern_file}"/>
+        </File>
+
+        <File name="LogDBFile" fileName="C:/Users/User/Desktop/finalWeb/logs/DB.log" bufferedIO="true">
+            <PatternLayout pattern="${pattern_file}"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="by.arabienko.onlineSchool.dao" level="debug" additivity="false">
+            <AppenderRef ref="LogDBFile"/>
+        </Logger>
+        <Logger name="by.arabienko.onlineSchool.controller" level="debug" additivity="false">
+            <AppenderRef ref="LogFile"/>
+        </Logger>
+        <Logger name="by.arabienko.onlineSchool.service" level="debug" additivity="false">
+            <AppenderRef ref="LogFile"/>
+        </Logger>
+        <Logger name="Console" level="info">
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Root level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Root>
+
+    </Loggers>
+</Configuration>

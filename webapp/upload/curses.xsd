@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<schema xmlns:tns="http://arabienko.by/xmlparser/entity/curses"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://arabienko.by/xmlparser/entity/curses"
+        elementFormDefault="qualified">
+
+    <element name="course" type="tns:CourseType" abstract="true"/>
+    <element name="studentCourse" type="tns:StudentCourse" substitutionGroup="tns:course"/>
+
+
+    <element name="courses" abstract="false">
+        <complexType>
+            <sequence>
+                <element name="studentCourse" type="tns:StudentCourse" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+
+    <complexType name="CourseType">
+        <sequence>
+            <element name="courseTeacher" type="tns:CourseTeacher"/>
+            <element name="userInfo" type="tns:User"/>
+        </sequence>
+        <attribute name="id" type="integer" use="required"/>
+    </complexType>
+
+    <complexType name="StudentCourse">
+        <complexContent>
+            <extension base="tns:CourseType">
+                <sequence>
+                    <element name="status">
+                        <simpleType>
+                            <restriction base="string">
+                                <enumeration value="preparing"/>
+                                <enumeration value="finished"/>
+                                <enumeration value="training"/>
+                            </restriction>
+                        </simpleType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+
+    <complexType name="CourseTeacher">
+        <sequence>
+            <element name="teacherSubject" type="tns:TeacherSubject"/>
+            <element name="startDate" type="date"/>
+            <element name="endDate" type="date"/>
+        </sequence>
+        <attribute name="id" type="integer" use="required"/>
+
+    </complexType>
+
+    <complexType name="TeacherSubject">
+        <sequence>
+            <element name="userTeacher" type="tns:User"/>
+            <element name="subject" type="tns:Subject"/>
+        </sequence>
+        <attribute name="id" type="integer" use="required" />
+    </complexType>
+
+    <complexType name="User">
+        <sequence>
+            <element name="surname" type="string"/>
+            <element name="name" type="string"/>
+            <element name="phone" type="tns:Phone"/>
+            <element name="pathPhoto" type="string"/>
+        </sequence>
+        <attribute name="id" type="integer" use="required"/>
+    </complexType>
+
+    <complexType name="Subject">
+        <sequence>
+            <element name="nameSubject" type="string"/>
+        </sequence>
+        <attribute name="id" type="integer" use="required"/>
+        <attribute name="description" type="string" use="optional" default="Base course. Programming"/>
+    </complexType>
+
+    <simpleType name="Phone">
+        <restriction base="string">
+            <maxLength value="13" />
+        </restriction>
+    </simpleType>
+</schema>

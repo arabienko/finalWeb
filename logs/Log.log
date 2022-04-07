@@ -1,0 +1,32 @@
+﻿2022-04-07 20:31:43 [http-nio-8080-exec-18] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-07 20:31:43 [http-nio-8080-exec-18] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-07 20:31:44 [http-nio-8080-exec-19] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-07 20:31:44 [http-nio-8080-exec-19] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-07 20:31:44 [http-nio-8080-exec-19] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 20:31:44 [http-nio-8080-exec-19] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 20:31:44 [http-nio-8080-exec-19] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 20:31:44 [http-nio-8080-exec-19] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 20:43:57 [http-nio-8080-exec-22] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-07 20:43:57 [http-nio-8080-exec-22] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-07 20:43:57 [http-nio-8080-exec-16] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-07 20:43:57 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-07 20:43:57 [http-nio-8080-exec-16] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 20:43:57 [http-nio-8080-exec-16] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 20:43:57 [http-nio-8080-exec-16] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 20:43:57 [http-nio-8080-exec-16] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 21:02:27 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-07 21:02:27 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-07 21:02:27 [http-nio-8080-exec-17] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-07 21:02:27 [http-nio-8080-exec-17] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-07 21:02:27 [http-nio-8080-exec-17] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 21:02:27 [http-nio-8080-exec-17] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 21:02:27 [http-nio-8080-exec-17] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 21:02:27 [http-nio-8080-exec-17] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 21:28:04 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-07 21:28:04 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-07 21:28:05 [http-nio-8080-exec-25] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-07 21:28:05 [http-nio-8080-exec-25] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-07 21:28:05 [http-nio-8080-exec-25] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 21:28:05 [http-nio-8080-exec-25] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 21:28:05 [http-nio-8080-exec-25] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-07 21:28:05 [http-nio-8080-exec-25] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
