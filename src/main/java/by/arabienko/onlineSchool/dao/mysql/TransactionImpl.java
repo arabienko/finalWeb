@@ -21,10 +21,20 @@ public class TransactionImpl implements Transaction {
     }
 
     @Override
-    public final <Type extends Dao> Type createDao(Type type) {
+    public <Type extends Dao> void createDao(Type type, Type... types)
+            throws PersistentException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.error("Autocommit is not impossible for DB.-{}", e);
+            throw new PersistentException(e);
+        }
         BaseDao baseDao = (BaseDao) type;
         baseDao.setConnection(connection);
-        return (Type) baseDao;
+        for (Type t : types){
+            BaseDao baseDaoT = (BaseDao) t;
+            baseDaoT.setConnection(connection);
+        }
     }
 
     @Override

@@ -1,16 +1,14 @@
 package by.arabienko.onlineSchool.dao.mysql;
 
+import by.arabienko.onlineSchool.dao.BaseDao;
 import by.arabienko.onlineSchool.dao.TeacherSubjectDao;
-import by.arabienko.onlineSchool.dao.pool.ConnectionPool;
-import by.arabienko.onlineSchool.exception.DaoException;
 import by.arabienko.onlineSchool.entity.Subject;
 import by.arabienko.onlineSchool.entity.TeacherSubject;
 import by.arabienko.onlineSchool.entity.UserInfo;
-import by.arabienko.onlineSchool.exception.PersistentException;
+import by.arabienko.onlineSchool.exception.DaoException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,7 +16,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TeacherSubjectDaoImpl implements TeacherSubjectDao {
+public class TeacherSubjectDaoImpl extends BaseDao implements TeacherSubjectDao {
     private static final Logger LOGGER =
             LogManager.getLogger(TeacherSubjectDaoImpl.class);
 
@@ -51,10 +49,8 @@ public class TeacherSubjectDaoImpl implements TeacherSubjectDao {
     public List<TeacherSubject> findAll() throws DaoException {
         LOGGER.debug("Start find all teacher subjects.");
         List<TeacherSubject> teacherSubjects = new ArrayList<>();
-        Connection connection = null;
         Statement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.createStatement();
             ResultSet resultSet = statement.
                     executeQuery(SQL_SELECT_ALL_TEACHER_SUBJECT);
@@ -63,7 +59,7 @@ public class TeacherSubjectDaoImpl implements TeacherSubjectDao {
                         new TeacherSubject.TeacherSubjectBuilder();
                 TeacherSubject teacherSubject = teacherSubjectBuilder.build();
                 UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
-                UserInfo teacher =builder.build();
+                UserInfo teacher = builder.build();
                 Subject subject = new Subject();
                 teacherSubject.setId(
                         resultSet.getInt(1));
@@ -86,19 +82,16 @@ public class TeacherSubjectDaoImpl implements TeacherSubjectDao {
                 teacherSubjectBuilder.setUserInfo(teacher);
                 teacherSubjects.add(teacherSubject);
             }
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException (findAllUsers) " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException (findAllUsers) " + e);
             }
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException (findAllUsers) " + e);            }
         }
         return teacherSubjects;
     }
@@ -110,12 +103,10 @@ public class TeacherSubjectDaoImpl implements TeacherSubjectDao {
                 new TeacherSubject.TeacherSubjectBuilder();
         TeacherSubject teacherSubject = teacherSubjectBuilder.build();
         UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
-        UserInfo teacher =builder.build();
+        UserInfo teacher = builder.build();
         Subject subject = new Subject();
-        Connection connection = null;
         PreparedStatement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_SELECT_TEACHER_SUBJECT_BY_ID);
             statement.setString(1, String.valueOf(id));
@@ -142,18 +133,17 @@ public class TeacherSubjectDaoImpl implements TeacherSubjectDao {
                 teacherSubjectBuilder.setSubject(subject);
                 teacherSubjectBuilder.setUserInfo(teacher);
             }
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);            }
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);            }
+                LOGGER.debug("SQLException " + e);
+            }
+
         }
         return teacherSubject;
     }
@@ -176,9 +166,7 @@ public class TeacherSubjectDaoImpl implements TeacherSubjectDao {
     public boolean create(TeacherSubject teacherSubject) throws DaoException {
         LOGGER.debug("Create teacherSubject.");
         PreparedStatement statement = null;
-        Connection connection = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_CREATE_TEACHER_SUBJECT);
             statement.setLong(
@@ -186,18 +174,17 @@ public class TeacherSubjectDaoImpl implements TeacherSubjectDao {
             statement.setLong(
                     2, teacherSubject.getId());
             statement.executeUpdate();
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             return false;
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);            }
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);            }
+                LOGGER.debug("SQLException " + e);
+            }
+
         }
         return true;
     }
@@ -207,9 +194,7 @@ public class TeacherSubjectDaoImpl implements TeacherSubjectDao {
             throws DaoException {
         LOGGER.debug("Update TeacherSubject.");
         PreparedStatement statement = null;
-        Connection connection = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_UPDATE_TEACHER_SUBJECT);
             statement.setLong(
@@ -222,18 +207,16 @@ public class TeacherSubjectDaoImpl implements TeacherSubjectDao {
                     2,
                     teacherSubject.getSubject().getId());
             statement.executeUpdate();
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             e.printStackTrace();
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);            }
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);            }
+                LOGGER.debug("SQLException " + e);
+            }
         }
         return true;
     }
@@ -244,12 +227,10 @@ public class TeacherSubjectDaoImpl implements TeacherSubjectDao {
         LOGGER.debug("Start find TeacherSubject by teacher surname.");
         List<TeacherSubject> teacherSubjects = new ArrayList<>();
         UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
-        UserInfo teacher =builder.build();
+        UserInfo teacher = builder.build();
         Subject subject = new Subject();
-        Connection connection = null;
         PreparedStatement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_SELECT_TEACHER_SUBJECT_BY_SURNAME);
             statement.setString(1, namePattern);
@@ -280,20 +261,19 @@ public class TeacherSubjectDaoImpl implements TeacherSubjectDao {
                 teacherSubjectBuilder.setUserInfo(teacher);
                 teacherSubjects.add(teacherSubject);
             }
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);            }
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);            }
+                LOGGER.debug("SQLException " + e);
+            }
         }
-        return teacherSubjects;    }
+        return teacherSubjects;
+    }
 
     @Override
     public List<TeacherSubject> findTeacherSubjectBySubject
@@ -301,12 +281,10 @@ public class TeacherSubjectDaoImpl implements TeacherSubjectDao {
         LOGGER.debug("Start find TeacherSubject by subject name.");
         List<TeacherSubject> teacherSubjects = new ArrayList<>();
         UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
-        UserInfo teacher =builder.build();
+        UserInfo teacher = builder.build();
         Subject subject = new Subject();
-        Connection connection = null;
         PreparedStatement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_SELECT_TEACHER_SUBJECT_BY_SUBJECT);
             statement.setString(1, namePattern);
@@ -337,18 +315,17 @@ public class TeacherSubjectDaoImpl implements TeacherSubjectDao {
                 teacherSubjectBuilder.setUserInfo(teacher);
                 teacherSubjects.add(teacherSubject);
             }
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);            }
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);            }
+                LOGGER.debug("SQLException " + e);
+            }
         }
-        return teacherSubjects;    }
+        return teacherSubjects;
+    }
 }

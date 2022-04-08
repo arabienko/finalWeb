@@ -3,6 +3,9 @@ package by.arabienko.onlineSchool.controller.command.impl;
 import by.arabienko.onlineSchool.controller.command.CommandAction;
 import by.arabienko.onlineSchool.entity.StudentCourse;
 import by.arabienko.onlineSchool.exception.ExceptionService;
+import by.arabienko.onlineSchool.exception.PersistentException;
+import by.arabienko.onlineSchool.service.ServiceFactory;
+import by.arabienko.onlineSchool.service.ServiceFactoryImpl;
 import by.arabienko.onlineSchool.service.StudentCourseService;
 import by.arabienko.onlineSchool.service.impl.StudentCourseServiceImpl;
 
@@ -13,12 +16,14 @@ import java.util.List;
 public class CommandAllStudentCourse implements CommandAction {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
+        ServiceFactory factory = ServiceFactoryImpl.getInstance();
         StudentCourseService service =
                 new StudentCourseServiceImpl();
         List<StudentCourse> set = null;
         try {
+           // set = factory.getService(service).findAll();
             set = service.findAll();
-        } catch (ExceptionService e) {
+        } catch (ExceptionService | PersistentException e) {
             e.printStackTrace();
         }
         request.setAttribute("parse", "commandSCAll");

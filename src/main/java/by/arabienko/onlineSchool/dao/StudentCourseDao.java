@@ -3,6 +3,7 @@ package by.arabienko.onlineSchool.dao;
 import by.arabienko.onlineSchool.exception.DaoException;
 import by.arabienko.onlineSchool.entity.StudentCourse;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -22,7 +23,8 @@ public interface StudentCourseDao extends Dao<Long, StudentCourse> {
      * @param patternStudent id student
      * @return boolean true if student course is unique.
      * @throws DaoException
+     * @throws SQLException
      */
-    boolean isUnique(long patternCourse, long patternStudent) throws DaoException;
+    boolean isUnique(long patternCourse, long patternStudent) throws DaoException, SQLException;
 
 }

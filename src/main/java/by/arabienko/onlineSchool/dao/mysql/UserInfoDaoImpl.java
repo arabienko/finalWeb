@@ -1,14 +1,12 @@
 package by.arabienko.onlineSchool.dao.mysql;
 
+import by.arabienko.onlineSchool.dao.BaseDao;
 import by.arabienko.onlineSchool.dao.UserInfoDao;
-import by.arabienko.onlineSchool.dao.pool.ConnectionPool;
-import by.arabienko.onlineSchool.exception.DaoException;
 import by.arabienko.onlineSchool.entity.UserInfo;
-import by.arabienko.onlineSchool.exception.PersistentException;
+import by.arabienko.onlineSchool.exception.DaoException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +14,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserInfoDaoImpl implements UserInfoDao {
+public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
     private static final Logger LOGGER =
             LogManager.getLogger(UserInfoDaoImpl.class);
 
@@ -50,16 +48,14 @@ public class UserInfoDaoImpl implements UserInfoDao {
             throws DaoException {
         LOGGER.debug("Start find all users.");
         List<UserInfo> users = new ArrayList<>();
-        Connection connection = null;
         Statement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.createStatement();
             ResultSet resultSet = statement.
                     executeQuery(SQL_SELECT_ALL_USERS_INFO);
             while (resultSet.next()) {
                 UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
-                UserInfo userInfo =builder.build();
+                UserInfo userInfo = builder.build();
                 builder.setId(
                         resultSet.getInt(1));
                 builder.setSurname(
@@ -72,19 +68,15 @@ public class UserInfoDaoImpl implements UserInfoDao {
                         resultSet.getString(5));
                 users.add(userInfo);
             }
-        } catch (SQLException | PersistentException e) {
-            LOGGER.debug("SQLException (findAll) "+e);
+        } catch (SQLException e) {
+            LOGGER.debug("SQLException (findAll) " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (findAll) "+e);
-            }
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException (findAll) "+e);
+                LOGGER.debug("SQLException (findAll) " + e);
             }
         }
         return users;
@@ -94,12 +86,10 @@ public class UserInfoDaoImpl implements UserInfoDao {
     public UserInfo findEntityById(Long id)
             throws DaoException {
         LOGGER.debug("Start find users by id.");
-        Connection connection = null;
         PreparedStatement statement = null;
         UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
-        UserInfo userInfo =builder.build();
+        UserInfo userInfo = builder.build();
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.prepareStatement(SQL_SELECT_USER_INFO_BY_ID);
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
@@ -115,19 +105,15 @@ public class UserInfoDaoImpl implements UserInfoDao {
                 builder.setPathImage(
                         resultSet.getString(5));
             }
-        } catch (SQLException | PersistentException e) {
-            LOGGER.debug("SQLException (findUserBySurname) "+e);
+        } catch (SQLException e) {
+            LOGGER.debug("SQLException (findUserBySurname) " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserBySurname) "+e);
-            }
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserBySurname) "+e);
+                LOGGER.debug("SQLException (findUserBySurname) " + e);
             }
         }
         return userInfo;
@@ -136,7 +122,7 @@ public class UserInfoDaoImpl implements UserInfoDao {
     @Override
     public boolean delete(UserInfo userInfo)
             throws DaoException {
-        LOGGER.debug( "Deleting user is not supported.");
+        LOGGER.debug("Deleting user is not supported.");
         throw new UnsupportedOperationException(
                 "Deleting user is not supported.");
     }
@@ -144,7 +130,7 @@ public class UserInfoDaoImpl implements UserInfoDao {
     @Override
     public boolean delete(Long id)
             throws DaoException {
-        LOGGER.debug( "Deleting user by ID is not supported.");
+        LOGGER.debug("Deleting user by ID is not supported.");
         throw new UnsupportedOperationException(
                 "Deleting user by ID is not supported.");
     }
@@ -154,9 +140,7 @@ public class UserInfoDaoImpl implements UserInfoDao {
             throws DaoException {
         LOGGER.debug("Create user info.");
         PreparedStatement statement = null;
-        Connection connection = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_CREATE_USER_INFO);
             statement.setLong(1, userInfo.getId());
@@ -169,17 +153,13 @@ public class UserInfoDaoImpl implements UserInfoDao {
             statement.setString(
                     5, userInfo.getPathImage());
             statement.executeUpdate();
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             return false;
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);
-            }
-            try {
-                connection.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException " + e);
             }
@@ -191,9 +171,7 @@ public class UserInfoDaoImpl implements UserInfoDao {
     public boolean update(UserInfo userInfo) throws DaoException {
         LOGGER.debug("Update user info.");
         PreparedStatement statement = null;
-        Connection connection = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_UPDATE_USER_INFO);
             statement.setString(
@@ -209,17 +187,13 @@ public class UserInfoDaoImpl implements UserInfoDao {
                     4, userInfo.getPathImage());
             statement.executeUpdate();
             statement.executeUpdate();
-        } catch (SQLException | PersistentException e) {
-            LOGGER.debug("SQLException "+e);
+        } catch (SQLException e) {
+            LOGGER.debug("SQLException " + e);
             e.printStackTrace();
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);
-            }
-            try {
-                connection.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException " + e);
             }
@@ -232,16 +206,14 @@ public class UserInfoDaoImpl implements UserInfoDao {
             String patternName) throws DaoException {
         LOGGER.debug("Start find users by surname.");
         List<UserInfo> users = new ArrayList<>();
-        Connection connection = null;
         PreparedStatement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.prepareStatement(SQL_SELECT_BY_SURNAME);
             statement.setString(1, patternName);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
-                UserInfo userInfo =builder.build();
+                UserInfo userInfo = builder.build();
                 builder.setId(
                         resultSet.getInt(1));
                 builder.setSurname(
@@ -254,19 +226,15 @@ public class UserInfoDaoImpl implements UserInfoDao {
                         resultSet.getString(5));
                 users.add(userInfo);
             }
-        } catch (SQLException | PersistentException e) {
-            LOGGER.debug("SQLException (findUserBySurname) "+e);
+        } catch (SQLException e) {
+            LOGGER.debug("SQLException (findUserBySurname) " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserBySurname) "+e);
-            }
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserBySurname) "+e);
+                LOGGER.debug("SQLException (findUserBySurname) " + e);
             }
         }
         return users;
@@ -277,16 +245,14 @@ public class UserInfoDaoImpl implements UserInfoDao {
             throws DaoException {
         LOGGER.debug("Start find teacher users.");
         List<UserInfo> users = new ArrayList<>();
-        Connection connection = null;
         Statement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.createStatement();
             ResultSet resultSet = statement.
                     executeQuery(SQL_SELECT_ALL_TEACHER);
             while (resultSet.next()) {
                 UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
-                UserInfo user =builder.build();
+                UserInfo user = builder.build();
                 user.setId(
                         resultSet.getInt(1));
                 builder.setSurname(
@@ -299,19 +265,15 @@ public class UserInfoDaoImpl implements UserInfoDao {
                         resultSet.getString(5));
                 users.add(user);
             }
-        } catch (SQLException | PersistentException e) {
-            LOGGER.debug("SQLException (findUserTeacher) "+e);
+        } catch (SQLException e) {
+            LOGGER.debug("SQLException (findUserTeacher) " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserTeacher) "+e);
-            }
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserTeacher) "+e);
+                LOGGER.debug("SQLException (findUserTeacher) " + e);
             }
         }
         return users;
@@ -322,16 +284,14 @@ public class UserInfoDaoImpl implements UserInfoDao {
             throws DaoException {
         LOGGER.debug("Start find student users.");
         List<UserInfo> users = new ArrayList<>();
-        Connection connection = null;
         Statement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.createStatement();
             ResultSet resultSet = statement.
                     executeQuery(SQL_SELECT_ALL_STUDENT);
             while (resultSet.next()) {
                 UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
-                UserInfo user =builder.build();
+                UserInfo user = builder.build();
                 user.setId(
                         resultSet.getInt(1));
                 builder.setSurname(
@@ -344,19 +304,15 @@ public class UserInfoDaoImpl implements UserInfoDao {
                         resultSet.getString(5));
                 users.add(user);
             }
-        } catch (SQLException | PersistentException e) {
-            LOGGER.debug("SQLException (findUserStudent) "+e);
+        } catch (SQLException e) {
+            LOGGER.debug("SQLException (findUserStudent) " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserStudent) "+e);
-            }
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserStudent) "+e);
+                LOGGER.debug("SQLException (findUserStudent) " + e);
             }
         }
         return users;
@@ -367,11 +323,9 @@ public class UserInfoDaoImpl implements UserInfoDao {
             throws DaoException {
         LOGGER.debug("Start find admin.");
         UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
-        UserInfo user =builder.build();
-        Connection connection = null;
+        UserInfo user = builder.build();
         Statement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.createStatement();
             ResultSet resultSet = statement.
                     executeQuery(SQL_SELECT_ADMIN);
@@ -387,19 +341,15 @@ public class UserInfoDaoImpl implements UserInfoDao {
                 builder.setPathImage(
                         resultSet.getString(5));
             }
-        } catch (SQLException | PersistentException e) {
-            LOGGER.debug("SQLException (findUserAdmin) "+e);
+        } catch (SQLException e) {
+            LOGGER.debug("SQLException (findUserAdmin) " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserAdmin) "+e);
-            }
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserAdmin) "+e);
+                LOGGER.debug("SQLException (findUserAdmin) " + e);
             }
         }
         return user;

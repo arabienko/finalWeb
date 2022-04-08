@@ -22,6 +22,8 @@ public class ServiceFactoryImpl implements ServiceFactory {
         return instance;
     }
 
+
+
     @Override
     public <Type extends Service> Type getService(Type type) throws PersistentException {
         Transaction transaction = transactionFactory.createTransaction();

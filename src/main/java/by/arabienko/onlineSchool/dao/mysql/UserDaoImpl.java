@@ -1,21 +1,22 @@
 package by.arabienko.onlineSchool.dao.mysql;
 
+import by.arabienko.onlineSchool.dao.BaseDao;
 import by.arabienko.onlineSchool.dao.UserDao;
-import by.arabienko.onlineSchool.dao.pool.ConnectionPool;
 import by.arabienko.onlineSchool.entity.User;
 import by.arabienko.onlineSchool.exception.DaoException;
-import by.arabienko.onlineSchool.exception.PersistentException;
 import org.apache.commons.codec.digest.DigestUtils;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl extends BaseDao implements UserDao {
     private static final Logger LOGGER =
             LogManager.getLogger(UserDaoImpl.class);
 
@@ -46,10 +47,8 @@ public class UserDaoImpl implements UserDao {
     public List<User> findAll() throws DaoException {
         LOGGER.debug("Start find all user.");
         List<User> users = new ArrayList<>();
-        Connection connection = null;
         Statement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.createStatement();
             ResultSet resultSet = statement.
                     executeQuery(SQL_SELECT_ALL_USERS);
@@ -65,17 +64,13 @@ public class UserDaoImpl implements UserDao {
                         resultSet.getInt(4));
                 users.add(user);
             }
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException (findAllUsers) " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException (findAllUsers) " + e);
-            }
-            try {
-                connection.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException (findAllUsers) " + e);
             }
@@ -88,10 +83,8 @@ public class UserDaoImpl implements UserDao {
             final Long id) throws DaoException {
         LOGGER.debug("Start find user by ID.");
         User user = new User();
-        Connection connection = null;
         PreparedStatement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_SELECT_USER_BY_ID);
             statement.setString(1, String.valueOf(id));
@@ -107,17 +100,13 @@ public class UserDaoImpl implements UserDao {
                 user.setRole(
                         resultSet.getInt("role"));
             }
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);
-            }
-            try {
-                connection.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException " + e);
             }
@@ -130,10 +119,8 @@ public class UserDaoImpl implements UserDao {
             final String log, String pass) throws DaoException {
         LOGGER.debug("Start find user by param.");
         User user = new User();
-        Connection connection = null;
         PreparedStatement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_SELECT_USER_BY_PARAM);
             statement.setString(1, String.valueOf(log));
@@ -150,17 +137,13 @@ public class UserDaoImpl implements UserDao {
                 user.setRole(
                         resultSet.getInt("role"));
             }
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);
-            }
-            try {
-                connection.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException " + e);
             }
@@ -186,9 +169,7 @@ public class UserDaoImpl implements UserDao {
     public boolean create(final User user) {
         LOGGER.debug("Create user.");
         PreparedStatement statement = null;
-        Connection connection = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_CREATE_USER);
             statement.setString(
@@ -198,17 +179,13 @@ public class UserDaoImpl implements UserDao {
             statement.setInt(
                     3, user.getRole());
             statement.executeUpdate();
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             return false;
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);
-            }
-            try {
-                connection.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException " + e);
             }
@@ -220,9 +197,7 @@ public class UserDaoImpl implements UserDao {
     public boolean update(final User user) {
         LOGGER.debug("Update user.");
         PreparedStatement statement = null;
-        Connection connection = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_UPDATE_USER);
             statement.setString(
@@ -233,17 +208,13 @@ public class UserDaoImpl implements UserDao {
                     2, DigestUtils.sha512Hex
                             (user.getPassword()));
             statement.executeUpdate();
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             e.printStackTrace();
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);
-            }
-            try {
-                connection.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException " + e);
             }
@@ -256,10 +227,8 @@ public class UserDaoImpl implements UserDao {
             final String patternName) throws DaoException {
         LOGGER.debug("Find user by login.");
         User user = new User();
-        Connection connection = null;
         PreparedStatement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_SELECT_USER_BY_LOGIN);
             statement.setString(
@@ -276,17 +245,13 @@ public class UserDaoImpl implements UserDao {
                 user.setRole(
                         resultSet.getInt("role"));
             }
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);
-            }
-            try {
-                connection.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException " + e);
             }
@@ -298,27 +263,21 @@ public class UserDaoImpl implements UserDao {
     public boolean isLoginUnique(String patternLogin)
             throws DaoException {
         boolean result = true;
-        Connection connection = null;
         PreparedStatement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.prepareStatement(SQL_IS_LOGIN_UNIQUE);
             statement.setString(1, patternLogin);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 result = false;
             }
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);
-            }
-            try {
-                connection.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException " + e);
             }
@@ -339,10 +298,8 @@ public class UserDaoImpl implements UserDao {
             final Long id) throws DaoException {
         LOGGER.debug("Start find user by ID.");
         User user = new User();
-        Connection connection = null;
         PreparedStatement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_FIND_BY_STUDENT_ID);
             statement.setString(1, String.valueOf(id));
@@ -358,17 +315,13 @@ public class UserDaoImpl implements UserDao {
                 user.setRole(
                         resultSet.getInt("role"));
             }
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);
-            }
-            try {
-                connection.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException " + e);
             }
@@ -381,10 +334,8 @@ public class UserDaoImpl implements UserDao {
             final Long id) throws DaoException {
         LOGGER.debug("Start find user by ID.");
         User user = new User();
-        Connection connection = null;
         PreparedStatement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_FIND_BY_TEACHER_ID);
             statement.setString(1, String.valueOf(id));
@@ -400,17 +351,13 @@ public class UserDaoImpl implements UserDao {
                 user.setRole(
                         resultSet.getInt("role"));
             }
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);
-            }
-            try {
-                connection.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException " + e);
             }
@@ -422,10 +369,8 @@ public class UserDaoImpl implements UserDao {
     public User findAdmin() throws DaoException {
         LOGGER.debug("Start find admin.");
         User user = new User();
-        Connection connection = null;
         PreparedStatement statement = null;
         try {
-            connection = ConnectionPool.getInstance().getConnection();
             statement = connection.
                     prepareStatement(SQL_FIND_BY_ADMIN);
             ResultSet resultSet =
@@ -440,23 +385,17 @@ public class UserDaoImpl implements UserDao {
                 user.setRole(
                         resultSet.getInt("role"));
             }
-        } catch (SQLException | PersistentException e) {
+        } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
-            } catch (SQLException e) {
-                LOGGER.debug("SQLException " + e);
-            }
-            try {
-                connection.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException " + e);
             }
         }
         return user;
     }
-
-
 }

@@ -10,58 +10,42 @@ import by.arabienko.onlineSchool.exception.DaoException;
 import by.arabienko.onlineSchool.exception.ExceptionService;
 import by.arabienko.onlineSchool.exception.PersistentException;
 import by.arabienko.onlineSchool.service.StudentCourseService;
-import by.arabienko.onlineSchool.service.TeacherCourseService;
-import by.arabienko.onlineSchool.service.UserInfoService;
 import by.arabienko.onlineSchool.valid.DataValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
+import java.sql.SQLException;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
-public class StudentCourseServiceImpl implements StudentCourseService {
+public class StudentCourseServiceImpl extends ServiceImpl implements StudentCourseService {
     private static final Logger LOGGER =
             LogManager.getLogger(StudentCourseServiceImpl.class);
 
     DAOFactory daoFactory = DAOFactory.getInstance();
     StudentCourseDao studentCourseDao =
             daoFactory.getStudentCourseDAO();
-    TeacherCourseService teacherCourseService =
-            new TeacherCourseServiceImpl();
-    UserInfoService userService =
-            new UserInfoServiceImpl();
     TransactionFactory factory = TransactionFactoryImpl.getInstance();
     Transaction transaction;
 
     @Override
-    public List<StudentCourse> findAll() throws ExceptionService {
-        List<StudentCourse> studentCourses = new ArrayList<>();
+    public List<StudentCourse> findAll()
+            throws ExceptionService, PersistentException {
+        List<StudentCourse> studentCourses;
         try {
             transaction = factory.createTransaction();
             transaction.createDao(studentCourseDao);
-            for (StudentCourse courseDAO : studentCourseDao.
-                    findAll()) {
-                StudentCourse.StudentCourseBuilder courseBuilder =
-                        new StudentCourse.StudentCourseBuilder();
-                StudentCourse studentCourse = courseBuilder.build();
-                studentCourse.setId(courseDAO.getId());
-                courseBuilder.setTeacherCourse(
-                                teacherCourseService.findEntityById(
-                                        courseDAO.getTeacherCourse().getId())).
-                        setUserInfo(userService.findEntityById(
-                                courseDAO.getUserInfo().getId())).
-                        setStatus(courseDAO.getStatus());
-                studentCourses.add(studentCourse);
-            }
+            studentCourses = studentCourseDao.findAll();
             transaction.commit();
-        } catch (DaoException | PersistentException e) {
+        } catch (DaoException | PersistentException | SQLException e) {
             LOGGER.debug("Service error findAll" + e);
+            transaction.rollback();
             throw new ExceptionService(e);
         } finally {
-            if (factory != null){
-            factory.close();}
+            if (factory!=null) {
+                factory.close();
+            }
         }
         studentCourses.sort(
                 Comparator.comparingLong(
@@ -70,24 +54,15 @@ public class StudentCourseServiceImpl implements StudentCourseService {
     }
 
     @Override
-    public StudentCourse findEntityById(Long id) throws ExceptionService, PersistentException {
-        StudentCourse.StudentCourseBuilder studentCourseBuilder =
-                new StudentCourse.StudentCourseBuilder();
-        StudentCourse studentCourse = studentCourseBuilder.build();
-        TransactionFactory factory = TransactionFactoryImpl.getInstance();
-        Transaction transaction = null;
+    public StudentCourse findEntityById(Long id)
+            throws ExceptionService, PersistentException {
+        StudentCourse studentCourse;
         try {
-            transaction = (Transaction) factory.createTransaction().createDao(studentCourseDao);
-
-            studentCourse.setId(studentCourseDao.findEntityById(id).getId());
-            studentCourseBuilder.setTeacherCourse(teacherCourseService.findEntityById(
-                            studentCourseDao.findEntityById(id).
-                                    getTeacherCourse().getId())).
-                    setUserInfo(userService.findEntityById(
-                            studentCourseDao.findEntityById(id).getUserInfo().getId())).
-                    setStatus(studentCourseDao.findEntityById(id).getStatus());
+            transaction = factory.createTransaction();
+            transaction.createDao(studentCourseDao);
+            studentCourse = studentCourseDao.findEntityById(id);
             transaction.commit();
-        } catch (DaoException | ExceptionService | PersistentException e) {
+        } catch (DaoException | PersistentException e) {
             LOGGER.debug("Service error find by id " + e);
             assert transaction!=null;
             transaction.rollback();
@@ -113,60 +88,68 @@ public class StudentCourseServiceImpl implements StudentCourseService {
     }
 
     @Override
-    public boolean create(StudentCourse t) throws ExceptionService {
+    public boolean create(StudentCourse t)
+            throws ExceptionService, PersistentException {
+        boolean result;
         if (t==null) {
             LOGGER.debug("StudentCourse equals null");
             throw new ExceptionService("StudentCourse equals null");
         }
         try {
-            return studentCourseDao.create(t);
-        } catch (DaoException e) {
+            transaction = factory.createTransaction();
+            transaction.createDao(studentCourseDao);
+            result = studentCourseDao.create(t);
+            transaction.commit();
+        } catch (DaoException | PersistentException e) {
             LOGGER.debug("Service error create StudentCourse " + e);
+            transaction.rollback();
             throw new ExceptionService(e);
+        } finally {
+            factory.close();
         }
+        return result;
     }
 
     @Override
-    public boolean update(StudentCourse t) throws ExceptionService {
+    public boolean update(StudentCourse t)
+            throws ExceptionService {
+        boolean result;
         if (t==null) {
             LOGGER.debug("StudentCourse equals null");
             throw new ExceptionService("StudentCourse equals null");
         }
         try {
-            return studentCourseDao.update(t);
-        } catch (DaoException e) {
+            transaction = factory.createTransaction();
+            transaction.createDao(studentCourseDao);
+            result = studentCourseDao.update(t);
+        } catch (DaoException | PersistentException e) {
             LOGGER.debug("Service error update StudentCourse " + e);
             throw new ExceptionService(e);
         }
+        return result;
     }
 
     @Override
     public List<StudentCourse> findStudentCourseBySubject(
-            String namePattern) throws ExceptionService {
-        List<StudentCourse> studentCourses = new ArrayList<>();
+            String namePattern) throws ExceptionService, PersistentException {
+        List<StudentCourse> studentCourses;
         if (!DataValidator.isSubjectNameValid(namePattern)
                 || Objects.equals(namePattern, "")) {
             LOGGER.debug("Subject name is not valid.");
             throw new ExceptionService("Subject name is not valid.");
         }
         try {
-            for (StudentCourse courseDAO : studentCourseDao.
-                    findStudentCourseBySubject(namePattern)) {
-                StudentCourse.StudentCourseBuilder courseBuilder =
-                        new StudentCourse.StudentCourseBuilder();
-                StudentCourse studentCourse = courseBuilder.build();
-                studentCourse.setId(courseDAO.getId());
-                courseBuilder.setTeacherCourse(
-                                teacherCourseService.findEntityById(
-                                        courseDAO.getTeacherCourse().getId())).
-                        setUserInfo(userService.findEntityById(
-                                courseDAO.getUserInfo().getId())).
-                        setStatus(courseDAO.getStatus());
-                studentCourses.add(studentCourse);
-            }
-        } catch (DaoException e) {
+            transaction = factory.createTransaction();
+            transaction.createDao(studentCourseDao);
+            studentCourses = studentCourseDao.
+                    findStudentCourseBySubject(namePattern);
+            transaction.commit();
+        } catch (DaoException | PersistentException e) {
             LOGGER.debug("Service error find by start date " + e);
+            transaction.rollback();
             throw new ExceptionService(e);
+        } finally {
+            factory.close();
         }
         studentCourses.sort(
                 Comparator.comparing(
@@ -175,13 +158,22 @@ public class StudentCourseServiceImpl implements StudentCourseService {
     }
 
     @Override
-    public boolean isUnique(long patternCourse,
-                            long patternStudent) throws ExceptionService {
+    public boolean isUnique(long patternCourse, long patternStudent)
+            throws ExceptionService, PersistentException {
+        boolean result;
         try {
-            return studentCourseDao.isUnique(patternCourse, patternStudent);
-        } catch (DaoException e) {
+            transaction = factory.createTransaction();
+            transaction.createDao(studentCourseDao);
+            result = studentCourseDao.
+                    isUnique(patternCourse, patternStudent);
+            transaction.commit();
+        } catch (DaoException | PersistentException | SQLException e) {
             LOGGER.debug("Service error isUnique " + e);
+            transaction.rollback();
             throw new ExceptionService(e);
+        } finally {
+            factory.close();
         }
+        return result;
     }
 }

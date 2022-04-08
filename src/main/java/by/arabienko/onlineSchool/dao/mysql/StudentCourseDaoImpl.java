@@ -24,20 +24,18 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
             "SELECT id, course_id, student_id, status FROM student_course";
 
     @Override
-    public List<StudentCourse> findAll() throws DaoException {
+    public List<StudentCourse> findAll() throws DaoException, SQLException {
         LOGGER.debug("Start find all student course.");
-        List<StudentCourse> studentCourses = new ArrayList<>();
+        List<StudentCourse> studentCourses =
+                new ArrayList<>();
         Statement statement = null;
         if (connection==null) {
             LOGGER.error("ERROR Connection");
         }
         try {
-            LOGGER.debug("Start find all student course.222");
             statement = connection.createStatement();
-            LOGGER.debug("Start find all student course.222");
             ResultSet resultSet = statement.
                     executeQuery(SQL_SELECT_ALL_STUDENT_COURSE);
-            LOGGER.debug("Start find all student course.");
             while (resultSet.next()) {
                 StudentCourse.StudentCourseBuilder studentCourseBuilder =
                         new StudentCourse.StudentCourseBuilder();
@@ -56,11 +54,14 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
                                 resultSet.getString(4));
                 studentCourses.add(studentCourse);
             }
+            connection.commit();
         } catch (SQLException e) {
             LOGGER.debug("SQLException ((StudentCourse - findAllUsers): " + e);
+            connection.rollback();
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException ((StudentCourse - findAllUsers): " + e);
@@ -75,6 +76,9 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
     @Override
     public StudentCourse findEntityById(Long id) throws DaoException {
         LOGGER.debug("Start find course student by ID.");
+        if (connection==null) {
+            LOGGER.error("ERROR Connection");
+        }
         StudentCourse.StudentCourseBuilder studentCourseBuilder =
                 new StudentCourse.StudentCourseBuilder();
         StudentCourse studentCourse = studentCourseBuilder.build();
@@ -104,6 +108,7 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException (studentCourse - FindByID): " + e);
@@ -132,6 +137,9 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
     @Override
     public boolean create(StudentCourse studentCourse) throws DaoException {
         LOGGER.debug("Create teacherCourse.");
+        if (connection==null) {
+            LOGGER.error("ERROR Connection");
+        }
         PreparedStatement statement = null;
         try {
             statement = connection.
@@ -153,6 +161,7 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
             return false;
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException " +
@@ -168,6 +177,9 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
     @Override
     public boolean update(StudentCourse studentCourse) throws DaoException {
         LOGGER.debug("Update studentCourse.");
+        if (connection==null) {
+            LOGGER.error("ERROR Connection");
+        }
         PreparedStatement statement = null;
         try {
             statement = connection.
@@ -190,6 +202,7 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
             e.printStackTrace();
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException " +
@@ -208,6 +221,9 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
     @Override
     public List<StudentCourse> findStudentCourseBySubject(String namePattern) throws DaoException {
         LOGGER.debug("Start find course teacher by subject.");
+        if (connection==null) {
+            LOGGER.error("ERROR Connection");
+        }
         List<StudentCourse> studentCourses = new ArrayList<>();
         StudentCourse.StudentCourseBuilder studentCourseBuilder =
                 new StudentCourse.StudentCourseBuilder();
@@ -242,6 +258,7 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException (" +
@@ -256,23 +273,31 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
 
     @Override
     public boolean isUnique(long patternCourse, long patternStudent)
-            throws DaoException {
+            throws DaoException, SQLException {
         LOGGER.debug("Is the data unique (student course)");
+        if (connection==null) {
+            LOGGER.error("ERROR Connection");
+        }
         boolean result = true;
         PreparedStatement statement = null;
         try {
-            statement = connection.prepareStatement(SQL_IS_STUDENT_COURSE_UNIQUE);
+            connection.setAutoCommit(false);
+            statement = connection.
+                    prepareStatement(SQL_IS_STUDENT_COURSE_UNIQUE);
             statement.setLong(1, patternCourse);
             statement.setLong(2, patternStudent);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 result = false;
             }
+            connection.commit();
         } catch (SQLException e) {
             LOGGER.debug("SQLException (studentCourse, isUnique) " + e);
+            connection.rollback();
             throw new DaoException(e);
         } finally {
             try {
+                assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException (studentCourse, isUnique) " + e);

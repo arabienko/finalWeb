@@ -2,6 +2,7 @@ package by.arabienko.onlineSchool.controller.test;
 
 import by.arabienko.onlineSchool.entity.StudentCourse;
 import by.arabienko.onlineSchool.exception.ExceptionService;
+import by.arabienko.onlineSchool.exception.PersistentException;
 import by.arabienko.onlineSchool.service.StudentCourseService;
 import by.arabienko.onlineSchool.service.impl.StudentCourseServiceImpl;
 import org.apache.logging.log4j.LogManager;
@@ -48,7 +49,7 @@ public class ServletParseXmlTEST extends HttpServlet {
         List<StudentCourse> courseStudent = null;
         try {
             courseStudent = service.findAll();
-        } catch (ExceptionService e) {
+        } catch (ExceptionService | PersistentException e) {
             e.printStackTrace();
         }
         List<City> cities = new ArrayList<>();

@@ -16,7 +16,7 @@ import java.util.Objects;
 /**
  * The type Admin service.
  */
-public class AdminServiceImpl implements AdminService {
+public class AdminServiceImpl extends ServiceImpl implements AdminService {
     private static final Logger LOGGER =
             LogManager.getLogger(AdminServiceImpl.class);
     DAOFactory daoFactory = DAOFactory.getInstance();

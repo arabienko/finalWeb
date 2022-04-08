@@ -5,6 +5,7 @@ import by.arabienko.onlineSchool.exception.DaoException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -20,7 +21,7 @@ import java.util.List;
 public interface Dao<K, T extends Entity> {
     Logger LOGGER = LogManager.getLogger(Dao.class);
 
-    List<T> findAll() throws DaoException;
+    List<T> findAll() throws DaoException, SQLException;
 
     T findEntityById(K id) throws DaoException;
 
