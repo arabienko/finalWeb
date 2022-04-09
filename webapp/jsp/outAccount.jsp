@@ -19,23 +19,21 @@
                 <div class="btn  btn-secondary">
                     <div class="card zoom">
                         <span class="spinner-grow spinner-grow-sm"></span>
-                        <h2> ${name}</h2>
-                        <p>Java course:</p>
-                        <img class="card-img-top" src=${userInfo.pathImage} alt="Card image">
+                        <h2> Your account</h2>
+                        <img class="card-img-top" src= "img/img.png" alt="Card image">
                         <div class="card-body">
                             <h4 class="card-title"> ${userInfo.surname} ${userInfo.name}</h4>
-                            <p class="card-text"> ${userInfo.surname}</p>
+                            <p class="card-text"> ${userInfo.phone}</p>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
         <br>
-        <button type="button" class="btn  btn-primary btn-secondary" href="index.jsp">
-            Go back
-        </button>
-
-    </div>
+          </div>
+           <button type="button" class="btn  btn-primary btn-secondary" href="index.jsp">
+                      Go back
+                  </button>
     <jsp:include page="/jsp/fragment/footer"/>
 </div>
 </body>

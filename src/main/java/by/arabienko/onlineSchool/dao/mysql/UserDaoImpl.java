@@ -268,8 +268,9 @@ public class UserDaoImpl extends BaseDao implements UserDao {
             statement = connection.prepareStatement(SQL_IS_LOGIN_UNIQUE);
             statement.setString(1, patternLogin);
             ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
+            while (resultSet.next()) {
                 result = false;
+                LOGGER.debug("User already exists ");
             }
         } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);

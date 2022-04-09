@@ -9,6 +9,7 @@ body{
 }
 
 .zoom {
+
 background-color: #ddd;
   border: none;
   color: black;
@@ -28,3 +29,4 @@ background-color: #ddd;
   display: flex;
   justify-content: space-around;
 }
+

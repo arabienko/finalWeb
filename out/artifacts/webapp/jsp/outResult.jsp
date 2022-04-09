@@ -11,7 +11,6 @@
 </head>
 <body class="container-fluid p-10 ">
 <jsp:include page="/jsp/fragment/header"/>
-
 <div class ="container-fluid mt-1">
 <a class="lead">User select command : <kbd> ${parse}</kbd> </a>
 <table class="table table-striped table-hover">

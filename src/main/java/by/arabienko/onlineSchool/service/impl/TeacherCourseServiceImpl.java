@@ -1,11 +1,12 @@
 package by.arabienko.onlineSchool.service.impl;
 
 import by.arabienko.onlineSchool.controller.DAOFactory;
-import by.arabienko.onlineSchool.dao.TeacherCourseDao;
-import by.arabienko.onlineSchool.dao.Transaction;
-import by.arabienko.onlineSchool.dao.TransactionFactory;
+import by.arabienko.onlineSchool.dao.*;
 import by.arabienko.onlineSchool.dao.mysql.TransactionFactoryImpl;
+import by.arabienko.onlineSchool.entity.Subject;
 import by.arabienko.onlineSchool.entity.TeacherCourse;
+import by.arabienko.onlineSchool.entity.TeacherSubject;
+import by.arabienko.onlineSchool.entity.UserInfo;
 import by.arabienko.onlineSchool.exception.DaoException;
 import by.arabienko.onlineSchool.exception.ExceptionService;
 import by.arabienko.onlineSchool.exception.PersistentException;
@@ -15,6 +16,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -26,6 +28,9 @@ public class TeacherCourseServiceImpl extends ServiceImpl implements TeacherCour
     DAOFactory daoFactory = DAOFactory.getInstance();
     TeacherCourseDao teacherCourseDao =
             daoFactory.getTeacherCourseDAO();
+    SubjectDao subjectDao = daoFactory.getSubjectDAO();
+    TeacherSubjectDao teacherSubjectDao = daoFactory.getTeacherSubjectDAO();
+    UserInfoDao teacherDao = daoFactory.getUserInfoDAO();
     TransactionFactory factory = TransactionFactoryImpl.getInstance();
     Transaction transaction;
 
@@ -162,17 +167,38 @@ public class TeacherCourseServiceImpl extends ServiceImpl implements TeacherCour
     @Override
     public List<TeacherCourse> findCourseBySubject(
             String namePattern) throws ExceptionService, PersistentException {
-        List<TeacherCourse> teacherCourses;
+        List<TeacherCourse> teacherCourses = new ArrayList<>();
         if (!DataValidator.isSubjectNameValid(namePattern)
                 || Objects.equals(namePattern, "")) {
             LOGGER.debug("Subject name is not valid.");
             throw new ExceptionService("Subject name is not valid.");
         }
+
         try {
             transaction = factory.createTransaction();
-            transaction.createDao(teacherCourseDao);
-            teacherCourses = teacherCourseDao.
-                    findCourseBySubject(namePattern);
+            transaction.createDao(teacherCourseDao,
+                    teacherSubjectDao,subjectDao,teacherDao);
+            for (TeacherCourse t : teacherCourseDao.
+                    findCourseBySubject(namePattern)) {
+                Long idTS = t.getTeacherSubject().getId();
+                TeacherSubject ts = teacherSubjectDao.findEntityById(idTS);
+                UserInfo teacher = teacherDao.findEntityById(ts.getUserInfo().getId());
+                Long idS = ts.getSubject().getId();
+                Subject subject =
+                        subjectDao.findEntityById(idS);
+                TeacherCourse.TeacherCourseBuilder teacherCourseBuilder =
+                        new TeacherCourse.TeacherCourseBuilder();
+                TeacherCourse teacherCourse = teacherCourseBuilder.build();
+                TeacherSubject.TeacherSubjectBuilder teacherSubjectBuilder =
+                        new TeacherSubject.TeacherSubjectBuilder();
+                TeacherSubject teacherSubject = teacherSubjectBuilder.build();
+                teacherSubject.setId(t.getTeacherSubject().getId());
+                teacherSubjectBuilder.setSubject(subject).setUserInfo(teacher);
+                teacherCourse.setId(t.getId());
+                teacherCourseBuilder.setTeacherSubject(teacherSubject).
+                        setStartDate(t.getStartDate()).setEndDate(t.getEndDate());
+                teacherCourses.add(teacherCourse);
+            }
             transaction.commit();
         } catch (DaoException | PersistentException e) {
             LOGGER.debug("Service error find by start date " + e);

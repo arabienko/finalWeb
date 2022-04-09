@@ -1,129 +1,263 @@
-﻿2022-04-08 20:24:29 [http-nio-8080-exec-31] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
-2022-04-08 20:24:29 [http-nio-8080-exec-31] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
-2022-04-08 20:24:30 [http-nio-8080-exec-50] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
-2022-04-08 20:24:30 [http-nio-8080-exec-50] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
-2022-04-08 20:24:30 [http-nio-8080-exec-50] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:24:30 [http-nio-8080-exec-50] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:24:30 [http-nio-8080-exec-50] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:24:30 [http-nio-8080-exec-50] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:26:22 [http-nio-8080-exec-51] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
-2022-04-08 20:26:22 [http-nio-8080-exec-51] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
-2022-04-08 20:26:23 [http-nio-8080-exec-52] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
-2022-04-08 20:26:23 [http-nio-8080-exec-52] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
-2022-04-08 20:26:23 [http-nio-8080-exec-52] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:26:23 [http-nio-8080-exec-52] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:26:23 [http-nio-8080-exec-52] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:26:23 [http-nio-8080-exec-52] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:28:34 [http-nio-8080-exec-56] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
-2022-04-08 20:28:34 [http-nio-8080-exec-56] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
-2022-04-08 20:28:35 [http-nio-8080-exec-57] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
-2022-04-08 20:28:35 [http-nio-8080-exec-57] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
-2022-04-08 20:28:35 [http-nio-8080-exec-57] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:28:35 [http-nio-8080-exec-57] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:28:35 [http-nio-8080-exec-57] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:28:35 [http-nio-8080-exec-57] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:29:54 [http-nio-8080-exec-1] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
-2022-04-08 20:29:54 [http-nio-8080-exec-1] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
-2022-04-08 20:30:03 [http-nio-8080-exec-2] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
-2022-04-08 20:30:03 [http-nio-8080-exec-2] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
-2022-04-08 20:30:03 [http-nio-8080-exec-2] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:30:03 [http-nio-8080-exec-2] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:30:03 [http-nio-8080-exec-2] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:30:03 [http-nio-8080-exec-2] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:35:42 [http-nio-8080-exec-4] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
-2022-04-08 20:35:42 [http-nio-8080-exec-4] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
-2022-04-08 20:35:43 [http-nio-8080-exec-5] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
-2022-04-08 20:35:43 [http-nio-8080-exec-5] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
-2022-04-08 20:35:43 [http-nio-8080-exec-5] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:35:43 [http-nio-8080-exec-5] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:35:43 [http-nio-8080-exec-5] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:35:43 [http-nio-8080-exec-5] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:35:47 [http-nio-8080-exec-4] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
-2022-04-08 20:35:47 [http-nio-8080-exec-4] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
-2022-04-08 20:35:47 [http-nio-8080-exec-4] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:35:47 [http-nio-8080-exec-4] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:35:47 [http-nio-8080-exec-4] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:35:47 [http-nio-8080-exec-4] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:39:42 [http-nio-8080-exec-8] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
-2022-04-08 20:39:42 [http-nio-8080-exec-8] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
-2022-04-08 20:39:43 [http-nio-8080-exec-15] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
-2022-04-08 20:39:43 [http-nio-8080-exec-15] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
-2022-04-08 20:39:43 [http-nio-8080-exec-15] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:39:43 [http-nio-8080-exec-15] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:39:43 [http-nio-8080-exec-15] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:39:43 [http-nio-8080-exec-15] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:39:44 [http-nio-8080-exec-15] DEBUG arabienko.onlineSchool.service.impl.TeacherCourseServiceImpl - Service error find by id by.arabienko.onlineSchool.exception.PersistentException: java.sql.SQLException: Can't call commit when autocommit=true
-2022-04-08 20:39:44 [http-nio-8080-exec-15] DEBUG arabienko.onlineSchool.service.impl.StudentCourseServiceImpl - Service error findAllby.arabienko.onlineSchool.exception.PersistentException: java.sql.SQLNonTransientConnectionException: Can't call rollback when autocommit=true
-2022-04-08 20:45:30 [http-nio-8080-exec-22] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
-2022-04-08 20:45:30 [http-nio-8080-exec-22] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
-2022-04-08 20:45:31 [http-nio-8080-exec-21] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.service.impl.TeacherCourseServiceImpl - Service error find by id by.arabienko.onlineSchool.exception.PersistentException: java.sql.SQLException: Can't call commit when autocommit=true
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.service.impl.StudentCourseServiceImpl - Service error findAllby.arabienko.onlineSchool.exception.PersistentException: java.sql.SQLNonTransientConnectionException: Can't call rollback when autocommit=true
-2022-04-08 20:47:27 [http-nio-8080-exec-26] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.service.impl.TeacherSubjectServiceImpl - Error find teacher subject entity {}.
-by.arabienko.onlineSchool.exception.PersistentException: java.sql.SQLException: Can't call commit when autocommit=true
-	at by.arabienko.onlineSchool.dao.mysql.TransactionImpl.commit(TransactionImpl.java:47) ~[classes/:?]
-	at by.arabienko.onlineSchool.service.impl.TeacherSubjectServiceImpl.findEntityById(TeacherSubjectServiceImpl.java:88) ~[classes/:?]
-	at by.arabienko.onlineSchool.service.impl.TeacherCourseServiceImpl.findEntityById(TeacherCourseServiceImpl.java:79) ~[classes/:?]
-	at by.arabienko.onlineSchool.service.impl.StudentCourseServiceImpl.findAll(StudentCourseServiceImpl.java:53) ~[classes/:?]
-	at by.arabienko.onlineSchool.controller.command.impl.CommandAllStudentCourse.execute(CommandAllStudentCourse.java:25) ~[classes/:?]
-	at by.arabienko.onlineSchool.controller.ServletSQLRequest.doPost(ServletSQLRequest.java:36) ~[classes/:?]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[servlet-api.jar:4.0.FR]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[servlet-api.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[catalina.jar:9.0.59]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[catalina.jar:9.0.59]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.59]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[catalina.jar:9.0.59]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[catalina.jar:9.0.59]
-	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) ~[log4j-web-2.17.2.jar:2.17.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[catalina.jar:9.0.59]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[catalina.jar:9.0.59]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[catalina.jar:9.0.59]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[catalina.jar:9.0.59]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[catalina.jar:9.0.59]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[catalina.jar:9.0.59]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[catalina.jar:9.0.59]
-	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) ~[catalina.jar:9.0.59]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[catalina.jar:9.0.59]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359) ~[catalina.jar:9.0.59]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-coyote.jar:9.0.59]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-coyote.jar:9.0.59]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) ~[tomcat-coyote.jar:9.0.59]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-coyote.jar:9.0.59]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-coyote.jar:9.0.59]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-util.jar:9.0.59]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-util.jar:9.0.59]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-util.jar:9.0.59]
-	at java.lang.Thread.run(Thread.java:834) ~[?:?]
-Caused by: java.sql.SQLException: Can't call commit when autocommit=true
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:67) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.ConnectionImpl.commit(ConnectionImpl.java:787) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at by.arabienko.onlineSchool.dao.pool.PooledConnection.commit(PooledConnection.java:60) ~[classes/:?]
-	at by.arabienko.onlineSchool.dao.mysql.TransactionImpl.commit(TransactionImpl.java:43) ~[classes/:?]
-	... 32 more
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.service.impl.TeacherCourseServiceImpl - Service error find by id by.arabienko.onlineSchool.exception.PersistentException: java.sql.SQLNonTransientConnectionException: Can't call rollback when autocommit=true
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.service.impl.StudentCourseServiceImpl - Service error findAllby.arabienko.onlineSchool.exception.PersistentException: java.sql.SQLNonTransientConnectionException: Can't call rollback when autocommit=true
-2022-04-08 21:14:56 [http-nio-8080-exec-31] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
-2022-04-08 21:14:56 [http-nio-8080-exec-31] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
-2022-04-08 21:14:57 [http-nio-8080-exec-34] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
-2022-04-08 21:14:57 [http-nio-8080-exec-34] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
-2022-04-08 21:14:57 [http-nio-8080-exec-34] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
-2022-04-08 21:41:33 [http-nio-8080-exec-46] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
-2022-04-08 21:41:33 [http-nio-8080-exec-46] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
-2022-04-08 21:41:41 [http-nio-8080-exec-38] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
-2022-04-08 21:41:41 [http-nio-8080-exec-38] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
-2022-04-08 21:42:13 [http-nio-8080-exec-1] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
-2022-04-08 21:42:13 [http-nio-8080-exec-1] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
-2022-04-08 21:42:14 [http-nio-8080-exec-2] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
-2022-04-08 21:42:14 [http-nio-8080-exec-2] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
-2022-04-08 21:42:14 [http-nio-8080-exec-2] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+﻿2022-04-09 19:16:06 [http-nio-8080-exec-1] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:16:06 [http-nio-8080-exec-1] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:16:07 [http-nio-8080-exec-9] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:16:07 [http-nio-8080-exec-9] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:16:20 [http-nio-8080-exec-7] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 19:16:20 [http-nio-8080-exec-7] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 19:16:20 [http-nio-8080-exec-7] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 19:16:20 [http-nio-8080-exec-7] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:16:20 [http-nio-8080-exec-7] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:16:44 [http-nio-8080-exec-8] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 19:16:44 [http-nio-8080-exec-8] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 19:16:44 [http-nio-8080-exec-8] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 19:16:44 [http-nio-8080-exec-8] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:16:44 [http-nio-8080-exec-8] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:19:29 [http-nio-8080-exec-11] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:19:29 [http-nio-8080-exec-11] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:19:30 [http-nio-8080-exec-12] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:19:30 [http-nio-8080-exec-12] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:19:44 [http-nio-8080-exec-14] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 19:19:44 [http-nio-8080-exec-14] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 19:19:44 [http-nio-8080-exec-14] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 19:19:44 [http-nio-8080-exec-14] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:19:44 [http-nio-8080-exec-14] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:21:00 [http-nio-8080-exec-11] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:21:00 [http-nio-8080-exec-11] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:21:01 [http-nio-8080-exec-17] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:21:01 [http-nio-8080-exec-17] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:21:06 [http-nio-8080-exec-16] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 19:21:06 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 19:21:06 [http-nio-8080-exec-16] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 19:21:06 [http-nio-8080-exec-16] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:21:06 [http-nio-8080-exec-16] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:21:23 [http-nio-8080-exec-13] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:21:23 [http-nio-8080-exec-13] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:21:25 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:21:25 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:22:59 [http-nio-8080-exec-24] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 19:22:59 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 19:22:59 [http-nio-8080-exec-24] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 19:22:59 [http-nio-8080-exec-24] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:22:59 [http-nio-8080-exec-24] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:27:21 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:27:21 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:27:23 [http-nio-8080-exec-23] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:27:23 [http-nio-8080-exec-23] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:27:43 [http-nio-8080-exec-24] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 19:27:43 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 19:27:43 [http-nio-8080-exec-24] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 19:27:43 [http-nio-8080-exec-24] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:27:43 [http-nio-8080-exec-24] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:29:51 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:29:51 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:29:54 [http-nio-8080-exec-23] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 19:29:54 [http-nio-8080-exec-23] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 19:29:54 [http-nio-8080-exec-23] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:34:15 [http-nio-8080-exec-25] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:34:15 [http-nio-8080-exec-25] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:34:16 [http-nio-8080-exec-30] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:34:16 [http-nio-8080-exec-30] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:35:01 [http-nio-8080-exec-31] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 19:35:01 [http-nio-8080-exec-31] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 19:35:01 [http-nio-8080-exec-31] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 19:35:01 [http-nio-8080-exec-31] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:35:01 [http-nio-8080-exec-31] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:36:34 [http-nio-8080-exec-33] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:36:34 [http-nio-8080-exec-33] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:36:35 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:36:35 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:40:29 [http-nio-8080-exec-38] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:40:29 [http-nio-8080-exec-38] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:40:30 [http-nio-8080-exec-39] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:40:30 [http-nio-8080-exec-39] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:40:49 [http-nio-8080-exec-42] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 19:40:49 [http-nio-8080-exec-42] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 19:40:49 [http-nio-8080-exec-42] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 19:40:49 [http-nio-8080-exec-42] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:40:49 [http-nio-8080-exec-42] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 19:47:31 [http-nio-8080-exec-42] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:47:31 [http-nio-8080-exec-42] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:47:32 [http-nio-8080-exec-46] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:47:32 [http-nio-8080-exec-46] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:48:13 [http-nio-8080-exec-45] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:48:13 [http-nio-8080-exec-45] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:51:10 [http-nio-8080-exec-51] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:51:10 [http-nio-8080-exec-51] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:51:12 [http-nio-8080-exec-49] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:51:12 [http-nio-8080-exec-49] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:51:16 [http-nio-8080-exec-53] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:51:16 [http-nio-8080-exec-53] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:51:17 [http-nio-8080-exec-56] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:51:17 [http-nio-8080-exec-56] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:51:17 [http-nio-8080-exec-48] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:51:17 [http-nio-8080-exec-48] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:51:29 [http-nio-8080-exec-53] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:51:29 [http-nio-8080-exec-53] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:51:31 [http-nio-8080-exec-54] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:51:31 [http-nio-8080-exec-54] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:51:52 [http-nio-8080-exec-50] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:51:52 [http-nio-8080-exec-50] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:53:14 [http-nio-8080-exec-53] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:53:14 [http-nio-8080-exec-53] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:53:16 [http-nio-8080-exec-56] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:53:16 [http-nio-8080-exec-56] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:54:43 [http-nio-8080-exec-49] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:54:43 [http-nio-8080-exec-49] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:55:57 [http-nio-8080-exec-55] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:55:57 [http-nio-8080-exec-55] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 19:55:59 [http-nio-8080-exec-57] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 19:55:59 [http-nio-8080-exec-57] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:02:45 [http-nio-8080-exec-49] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:02:45 [http-nio-8080-exec-49] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:02:46 [http-nio-8080-exec-54] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:02:46 [http-nio-8080-exec-54] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:03:06 [http-nio-8080-exec-48] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:03:06 [http-nio-8080-exec-48] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:03:06 [http-nio-8080-exec-48] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:03:06 [http-nio-8080-exec-48] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:03:06 [http-nio-8080-exec-48] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:03:24 [http-nio-8080-exec-49] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:03:24 [http-nio-8080-exec-49] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:03:24 [http-nio-8080-exec-49] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:03:24 [http-nio-8080-exec-49] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:03:24 [http-nio-8080-exec-49] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:06:40 [http-nio-8080-exec-55] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:06:40 [http-nio-8080-exec-55] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:06:41 [http-nio-8080-exec-57] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:06:41 [http-nio-8080-exec-57] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:06:49 [http-nio-8080-exec-50] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:06:49 [http-nio-8080-exec-50] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:06:52 [http-nio-8080-exec-52] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:06:52 [http-nio-8080-exec-52] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:07:13 [http-nio-8080-exec-54] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:07:13 [http-nio-8080-exec-54] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:07:13 [http-nio-8080-exec-54] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:07:13 [http-nio-8080-exec-54] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:07:13 [http-nio-8080-exec-54] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:08:38 [http-nio-8080-exec-60] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:08:38 [http-nio-8080-exec-60] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:08:38 [http-nio-8080-exec-60] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:08:38 [http-nio-8080-exec-60] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:08:38 [http-nio-8080-exec-60] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:11:27 [http-nio-8080-exec-64] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:11:27 [http-nio-8080-exec-64] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:11:29 [http-nio-8080-exec-58] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:11:29 [http-nio-8080-exec-58] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:11:42 [http-nio-8080-exec-59] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:11:42 [http-nio-8080-exec-59] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:11:42 [http-nio-8080-exec-59] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:11:42 [http-nio-8080-exec-59] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:11:42 [http-nio-8080-exec-59] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:13:21 [http-nio-8080-exec-68] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:13:21 [http-nio-8080-exec-68] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:13:22 [http-nio-8080-exec-69] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:13:22 [http-nio-8080-exec-69] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:13:33 [http-nio-8080-exec-68] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:13:33 [http-nio-8080-exec-68] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:13:33 [http-nio-8080-exec-68] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:13:33 [http-nio-8080-exec-68] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:13:33 [http-nio-8080-exec-68] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:15:56 [http-nio-8080-exec-77] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:15:56 [http-nio-8080-exec-77] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:15:58 [http-nio-8080-exec-79] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:15:58 [http-nio-8080-exec-79] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:16:15 [http-nio-8080-exec-75] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:16:15 [http-nio-8080-exec-75] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:16:15 [http-nio-8080-exec-75] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:16:36 [http-nio-8080-exec-80] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:16:36 [http-nio-8080-exec-80] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:16:36 [http-nio-8080-exec-80] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:16:52 [http-nio-8080-exec-77] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:16:52 [http-nio-8080-exec-77] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:16:54 [http-nio-8080-exec-78] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:16:54 [http-nio-8080-exec-78] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:17:05 [http-nio-8080-exec-82] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:17:05 [http-nio-8080-exec-82] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:17:05 [http-nio-8080-exec-82] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:20:30 [http-nio-8080-exec-83] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:20:30 [http-nio-8080-exec-83] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:20:31 [http-nio-8080-exec-78] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:20:31 [http-nio-8080-exec-78] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:20:43 [http-nio-8080-exec-84] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:20:43 [http-nio-8080-exec-84] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:20:43 [http-nio-8080-exec-84] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:23:26 [http-nio-8080-exec-83] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:23:26 [http-nio-8080-exec-83] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:23:28 [http-nio-8080-exec-77] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:23:28 [http-nio-8080-exec-77] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:23:39 [http-nio-8080-exec-79] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:23:39 [http-nio-8080-exec-79] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:23:39 [http-nio-8080-exec-79] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:25:04 [http-nio-8080-exec-1] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:25:04 [http-nio-8080-exec-1] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:25:05 [http-nio-8080-exec-4] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:25:05 [http-nio-8080-exec-4] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:25:15 [http-nio-8080-exec-7] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:25:15 [http-nio-8080-exec-7] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:25:15 [http-nio-8080-exec-7] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:25:15 [http-nio-8080-exec-7] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:25:15 [http-nio-8080-exec-7] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:25:38 [http-nio-8080-exec-2] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:25:38 [http-nio-8080-exec-2] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:25:38 [http-nio-8080-exec-2] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:25:38 [http-nio-8080-exec-2] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:25:38 [http-nio-8080-exec-2] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:26:57 [http-nio-8080-exec-10] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:26:57 [http-nio-8080-exec-10] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:27:00 [http-nio-8080-exec-8] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:27:00 [http-nio-8080-exec-8] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:27:02 [http-nio-8080-exec-7] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:27:02 [http-nio-8080-exec-7] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:27:14 [http-nio-8080-exec-9] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:27:14 [http-nio-8080-exec-9] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:27:14 [http-nio-8080-exec-9] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:27:14 [http-nio-8080-exec-9] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:27:14 [http-nio-8080-exec-9] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:27:21 [http-nio-8080-exec-1] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:27:21 [http-nio-8080-exec-1] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:27:21 [http-nio-8080-exec-1] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:27:21 [http-nio-8080-exec-1] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:27:21 [http-nio-8080-exec-1] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:27:49 [http-nio-8080-exec-12] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:27:49 [http-nio-8080-exec-12] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:27:59 [http-nio-8080-exec-13] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:27:59 [http-nio-8080-exec-13] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:28:54 [http-nio-8080-exec-11] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:28:54 [http-nio-8080-exec-11] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:28:57 [http-nio-8080-exec-12] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:28:57 [http-nio-8080-exec-12] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:30:41 [http-nio-8080-exec-18] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:30:41 [http-nio-8080-exec-18] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:30:42 [http-nio-8080-exec-16] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:30:42 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:30:42 [http-nio-8080-exec-16] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:30:42 [http-nio-8080-exec-12] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:30:42 [http-nio-8080-exec-12] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:32:56 [http-nio-8080-exec-20] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:32:56 [http-nio-8080-exec-20] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:32:58 [http-nio-8080-exec-17] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:32:58 [http-nio-8080-exec-17] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:33:07 [http-nio-8080-exec-15] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:33:07 [http-nio-8080-exec-15] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:33:07 [http-nio-8080-exec-15] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:33:07 [http-nio-8080-exec-15] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:33:07 [http-nio-8080-exec-15] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:33:17 [http-nio-8080-exec-11] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:33:17 [http-nio-8080-exec-11] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:33:17 [http-nio-8080-exec-11] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:33:17 [http-nio-8080-exec-11] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:33:17 [http-nio-8080-exec-11] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:34:00 [http-nio-8080-exec-20] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:34:00 [http-nio-8080-exec-20] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:34:01 [http-nio-8080-exec-17] DEBUG arabienko.onlineSchool.controller.filter.EncodingFilter - EncodingFilter finished working.
+2022-04-09 20:34:01 [http-nio-8080-exec-17] DEBUG arabienko.onlineSchool.controller.filter.FilterRequest - FilterRequest finished working.host
+2022-04-09 20:34:04 [http-nio-8080-exec-15] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:34:04 [http-nio-8080-exec-15] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:34:04 [http-nio-8080-exec-15] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:34:04 [http-nio-8080-exec-15] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:34:04 [http-nio-8080-exec-15] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:34:15 [http-nio-8080-exec-11] INFO  by.arabienko.onlineSchool.controller.ServletSQLRequest - Start servlet.
+2022-04-09 20:34:15 [http-nio-8080-exec-11] DEBUG arabienko.onlineSchool.controller.command.CommandFactory - Start working command factory.
+2022-04-09 20:34:15 [http-nio-8080-exec-11] DEBUG onlineSchool.controller.command.impl.CommandCreateUser - Upload path is C:\Users\User\Desktop\finalWeb\webapp\img
+2022-04-09 20:34:15 [http-nio-8080-exec-11] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.
+2022-04-09 20:34:15 [http-nio-8080-exec-11] DEBUG by.arabienko.onlineSchool.controller.DAOFactory - Start DAOFactory.

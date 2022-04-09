@@ -1,7 +1,7 @@
     <html>
     <head><title>Footer</title></head>
     <body>
-    <div class="container-fluid p-5 my-4 mt-3 border bg-secondary text-white text-center">
-        <p>Footer</p>
+    <div class="container-fluid p-5 my-4 mt-3 border bg-secondary text-white">
+        <p>&#169; 2021-2022, Arabiyenka Tatsiana</p>
     </div>
     </body></html>

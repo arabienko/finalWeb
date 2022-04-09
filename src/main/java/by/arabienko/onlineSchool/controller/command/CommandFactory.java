@@ -1,6 +1,8 @@
 package by.arabienko.onlineSchool.controller.command;
 
 import by.arabienko.onlineSchool.controller.command.impl.CommandAllStudentCourse;
+import by.arabienko.onlineSchool.controller.command.impl.CommandCreateUser;
+import by.arabienko.onlineSchool.controller.command.impl.CommandFindByNameSubject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,6 +18,9 @@ public class CommandFactory {
         commands = new HashMap<>();
 
         commands.put("selectALL", new CommandAllStudentCourse());
+        commands.put("course", new CommandFindByNameSubject());
+        commands.put("createUser", new CommandCreateUser());
+
     }
 
     public static CommandFactory getInstance(){

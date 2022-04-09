@@ -1,123 +1,101 @@
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.StudentCourseDaoImpl - Start find all student course.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.StudentCourseDaoImpl - Start find all student course.222
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.StudentCourseDaoImpl - Start find all student course.222
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.StudentCourseDaoImpl - Start find all student course.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 2 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TeacherCourseDaoImpl - Start find course teacher by ID.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 3 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 2 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TeacherCourseDaoImpl - Start find course teacher by ID.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 3 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 2 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 3 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TeacherSubjectDaoImpl - Start find TeacherSubject by ID.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TeacherSubjectDaoImpl - Start find TeacherSubject by ID.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TeacherSubjectDaoImpl - Start find TeacherSubject by ID.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.UserInfoDaoImpl - Start find users by id.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 2 used connections; 2 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TeacherCourseDaoImpl - Start find course teacher by ID.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 2 used connections; 2 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TeacherCourseDaoImpl - Start find course teacher by ID.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 2 used connections; 2 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 2 used connections; 3 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 3 used connections; 2 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.UserInfoDaoImpl - Start find users by id.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 2 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 2 used connections; 3 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 3 used connections; 2 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TeacherCourseDaoImpl - Start find course teacher by ID.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 2 used connections; 2 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TeacherCourseDaoImpl - Start find course teacher by ID.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 2 used connections; 2 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TeacherSubjectDaoImpl - Start find TeacherSubject by ID.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TeacherSubjectDaoImpl - Start find TeacherSubject by ID.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TeacherSubjectDaoImpl - Start find TeacherSubject by ID.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.UserInfoDaoImpl - Start find users by id.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 2 used connections; 2 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TeacherCourseDaoImpl - Start find course teacher by ID.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 2 used connections; 2 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TeacherCourseDaoImpl - Start find course teacher by ID.
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 2 used connections; 2 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] ERROR arabienko.onlineSchool.dao.mysql.TransactionImpl - Committing is not possible. java.sql.SQLException: Can't call commit when autocommit=true
-2022-04-08 20:45:32 [http-nio-8080-exec-21] ERROR arabienko.onlineSchool.dao.mysql.TransactionImpl - Rollback transaction is not possible. java.sql.SQLNonTransientConnectionException: Can't call rollback when autocommit=true
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 2 used connections; 3 free connection
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - rollback is good
-2022-04-08 20:45:32 [http-nio-8080-exec-21] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 2 used connections; 4 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 3 used connections; 3 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.mysql.StudentCourseDaoImpl - Start find all student course.
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.mysql.StudentCourseDaoImpl - Start find all student course.222
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.mysql.StudentCourseDaoImpl - Start find all student course.222
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.mysql.StudentCourseDaoImpl - Start find all student course.
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 2 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.mysql.TeacherCourseDaoImpl - Start find course teacher by ID.
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 1 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 2 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.mysql.TeacherCourseDaoImpl - Start find course teacher by ID.
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 1 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 2 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 1 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.mysql.TeacherSubjectDaoImpl - Start find TeacherSubject by ID.
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.mysql.TeacherSubjectDaoImpl - Start find TeacherSubject by ID.
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.mysql.TeacherSubjectDaoImpl - Start find TeacherSubject by ID.
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.mysql.UserInfoDaoImpl - Start find users by id.
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 1 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] ERROR arabienko.onlineSchool.dao.mysql.TransactionImpl - Committing is not possible. java.sql.SQLException: Can't call commit when autocommit=true
-2022-04-08 20:47:27 [http-nio-8080-exec-26] ERROR arabienko.onlineSchool.dao.mysql.TransactionImpl - Rollback transaction is not possible. java.sql.SQLNonTransientConnectionException: Can't call rollback when autocommit=true
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 2 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] ERROR arabienko.onlineSchool.dao.mysql.TransactionImpl - Rollback transaction is not possible. java.sql.SQLNonTransientConnectionException: Can't call rollback when autocommit=true
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 3 free connection
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - rollback is good
-2022-04-08 20:47:27 [http-nio-8080-exec-26] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 3 used connections; 4 free connection
-2022-04-08 21:14:57 [http-nio-8080-exec-34] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
-2022-04-08 21:14:57 [http-nio-8080-exec-34] DEBUG arabienko.onlineSchool.dao.mysql.StudentCourseDaoImpl - Start find all student course.
-2022-04-08 21:14:57 [http-nio-8080-exec-34] DEBUG arabienko.onlineSchool.dao.mysql.StudentCourseDaoImpl - Start find all student course.222
-2022-04-08 21:14:57 [http-nio-8080-exec-34] DEBUG arabienko.onlineSchool.dao.mysql.StudentCourseDaoImpl - Start find all student course.222
-2022-04-08 21:14:57 [http-nio-8080-exec-34] DEBUG arabienko.onlineSchool.dao.mysql.StudentCourseDaoImpl - Start find all student course.
-2022-04-08 21:14:57 [http-nio-8080-exec-34] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
-2022-04-08 21:14:57 [http-nio-8080-exec-34] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
-2022-04-08 21:42:14 [http-nio-8080-exec-2] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
-2022-04-08 21:42:14 [http-nio-8080-exec-2] DEBUG arabienko.onlineSchool.dao.mysql.StudentCourseDaoImpl - Start find all student course.
-2022-04-08 21:42:14 [http-nio-8080-exec-2] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
-2022-04-08 21:42:14 [http-nio-8080-exec-2] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 19:11:41 [http-nio-8080-exec-4] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 19:11:41 [http-nio-8080-exec-4] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - Create user.
+2022-04-09 19:11:41 [http-nio-8080-exec-4] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 19:14:24 [http-nio-8080-exec-7] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 19:14:24 [http-nio-8080-exec-7] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - Create user.
+2022-04-09 19:14:24 [http-nio-8080-exec-7] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 19:16:20 [http-nio-8080-exec-7] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 19:16:20 [http-nio-8080-exec-7] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - Create user.
+2022-04-09 19:16:20 [http-nio-8080-exec-7] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 19:16:44 [http-nio-8080-exec-8] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 19:16:44 [http-nio-8080-exec-8] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - Create user.
+2022-04-09 19:16:44 [http-nio-8080-exec-8] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 19:19:44 [http-nio-8080-exec-14] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 19:19:44 [http-nio-8080-exec-14] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - Create user.
+2022-04-09 19:19:44 [http-nio-8080-exec-14] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 19:21:06 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 19:21:06 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - Create user.
+2022-04-09 19:21:06 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
+2022-04-09 19:21:06 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 19:21:06 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 19:21:06 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.mysql.UserInfoDaoImpl - Create user info.
+2022-04-09 19:21:07 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.mysql.UserInfoDaoImpl - SQLException java.sql.SQLException: Incorrect integer value: '' for column 'phone' at row 1
+2022-04-09 19:21:07 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
+2022-04-09 19:21:07 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 19:22:59 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 19:22:59 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - Create user.
+2022-04-09 19:22:59 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - SQLException java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'arabienko' for key 'users.login'
+2022-04-09 19:22:59 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
+2022-04-09 19:22:59 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 19:27:43 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 19:27:43 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - Create user.
+2022-04-09 19:27:43 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
+2022-04-09 19:27:43 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 19:27:43 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 19:27:43 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.dao.mysql.UserInfoDaoImpl - Create user info.
+2022-04-09 19:27:43 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
+2022-04-09 19:27:43 [http-nio-8080-exec-24] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 19:29:54 [http-nio-8080-exec-23] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 19:29:54 [http-nio-8080-exec-23] DEBUG arabienko.onlineSchool.dao.mysql.TeacherCourseDaoImpl - Start find course teacher by StartDate.
+2022-04-09 19:29:54 [http-nio-8080-exec-23] DEBUG arabienko.onlineSchool.dao.mysql.TeacherSubjectDaoImpl - Start find TeacherSubject by ID.
+2022-04-09 19:29:54 [http-nio-8080-exec-23] DEBUG arabienko.onlineSchool.dao.mysql.UserInfoDaoImpl - Start find users by id.
+2022-04-09 19:29:54 [http-nio-8080-exec-23] DEBUG arabienko.onlineSchool.dao.mysql.TeacherSubjectDaoImpl - Start find TeacherSubject by ID.
+2022-04-09 19:29:54 [http-nio-8080-exec-23] DEBUG arabienko.onlineSchool.dao.mysql.UserInfoDaoImpl - Start find users by id.
+2022-04-09 19:29:54 [http-nio-8080-exec-23] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
+2022-04-09 19:29:54 [http-nio-8080-exec-23] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 19:35:01 [http-nio-8080-exec-31] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 19:35:01 [http-nio-8080-exec-31] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - Create user.
+2022-04-09 19:35:01 [http-nio-8080-exec-31] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
+2022-04-09 19:35:01 [http-nio-8080-exec-31] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 19:35:01 [http-nio-8080-exec-31] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 19:35:01 [http-nio-8080-exec-31] DEBUG arabienko.onlineSchool.dao.mysql.UserInfoDaoImpl - Create user info.
+2022-04-09 19:35:01 [http-nio-8080-exec-31] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
+2022-04-09 19:35:01 [http-nio-8080-exec-31] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 19:40:49 [http-nio-8080-exec-42] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 19:40:49 [http-nio-8080-exec-42] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:03:07 [http-nio-8080-exec-48] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:03:07 [http-nio-8080-exec-48] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:03:24 [http-nio-8080-exec-49] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:03:24 [http-nio-8080-exec-49] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:07:13 [http-nio-8080-exec-54] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:07:13 [http-nio-8080-exec-54] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - User already exists 
+2022-04-09 20:07:13 [http-nio-8080-exec-54] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:08:38 [http-nio-8080-exec-60] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:08:38 [http-nio-8080-exec-60] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - User already exists 
+2022-04-09 20:08:38 [http-nio-8080-exec-60] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:11:43 [http-nio-8080-exec-59] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:11:43 [http-nio-8080-exec-59] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - User already exists 
+2022-04-09 20:11:43 [http-nio-8080-exec-59] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:13:33 [http-nio-8080-exec-68] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:13:33 [http-nio-8080-exec-68] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - User already exists 
+2022-04-09 20:13:33 [http-nio-8080-exec-68] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:25:16 [http-nio-8080-exec-7] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:25:16 [http-nio-8080-exec-7] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - User already exists 
+2022-04-09 20:25:16 [http-nio-8080-exec-7] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:25:38 [http-nio-8080-exec-2] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:25:38 [http-nio-8080-exec-2] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - User already exists 
+2022-04-09 20:25:38 [http-nio-8080-exec-2] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:27:14 [http-nio-8080-exec-9] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:27:14 [http-nio-8080-exec-9] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - User already exists 
+2022-04-09 20:27:14 [http-nio-8080-exec-9] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:27:21 [http-nio-8080-exec-1] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:27:21 [http-nio-8080-exec-1] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - User already exists 
+2022-04-09 20:27:21 [http-nio-8080-exec-1] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:30:42 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:30:42 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.mysql.TeacherCourseDaoImpl - Start find course teacher by StartDate.
+2022-04-09 20:30:42 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.mysql.TeacherSubjectDaoImpl - Start find TeacherSubject by ID.
+2022-04-09 20:30:42 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.mysql.UserInfoDaoImpl - Start find users by id.
+2022-04-09 20:30:42 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.mysql.TransactionImpl - Commiting is good
+2022-04-09 20:30:42 [http-nio-8080-exec-16] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:33:07 [http-nio-8080-exec-15] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:33:07 [http-nio-8080-exec-15] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - User already exists 
+2022-04-09 20:33:07 [http-nio-8080-exec-15] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:33:17 [http-nio-8080-exec-11] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:33:17 [http-nio-8080-exec-11] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - User already exists 
+2022-04-09 20:33:17 [http-nio-8080-exec-11] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:34:04 [http-nio-8080-exec-15] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:34:04 [http-nio-8080-exec-15] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - User already exists 
+2022-04-09 20:34:04 [http-nio-8080-exec-15] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2022-04-09 20:34:15 [http-nio-8080-exec-11] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2022-04-09 20:34:15 [http-nio-8080-exec-11] DEBUG arabienko.onlineSchool.dao.mysql.UserDaoImpl - User already exists 
+2022-04-09 20:34:15 [http-nio-8080-exec-11] DEBUG arabienko.onlineSchool.dao.pool.ConnectionPool - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
