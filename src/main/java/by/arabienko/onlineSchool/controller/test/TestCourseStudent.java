@@ -8,6 +8,5 @@ import by.arabienko.onlineSchool.service.impl.StudentCourseServiceImpl;
 public class TestCourseStudent {
     public static void main(String[] args) throws ExceptionService, PersistentException {
         StudentCourseService service = new StudentCourseServiceImpl();
-        System.out.println(service.findAll());
     }
 }

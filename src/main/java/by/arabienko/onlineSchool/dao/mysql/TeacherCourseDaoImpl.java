@@ -34,10 +34,64 @@ public class TeacherCourseDaoImpl extends BaseDao implements TeacherCourseDao {
             "SELECT tc.id, tc.teacher_subject_id, tc.start_date, tc.end_date" +
                     " FROM teacher_course tc, teacher_subject ts, subjects s, user_info t" +
                     " WHERE s.nameSubject=? AND tc.teacher_subject_id = ts.id AND ts.subject_id = s.id";
+    private int noOfRecords;
 
     @Override
-    public List<TeacherCourse> findAll() throws DaoException {
-        LOGGER.debug("Start find all teacher course.");
+    public List<TeacherCourse> findAll(int offset, int records)
+            throws DaoException, SQLException {
+        LOGGER.info("Start find all teacher course.");
+        String SQL_SELECT_ALL_TEACHER_COURSE =
+                "SELECT SQL_CALC_FOUND_ROWS id, teacher_subject_id, start_date, end_date " +
+                        "FROM teacher_course limit " + offset + ", " + records;
+        List<TeacherCourse> teacherCourses = new ArrayList<>();
+        Statement statement = null;
+        try {
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.
+                    executeQuery(SQL_SELECT_ALL_TEACHER_COURSE);
+            while (resultSet.next()) {
+                TeacherCourse.TeacherCourseBuilder teacherCourseBuilder =
+                        new TeacherCourse.TeacherCourseBuilder();
+                TeacherCourse teacherCourse = teacherCourseBuilder.build();
+                TeacherSubject.TeacherSubjectBuilder teacherSubjectBuilder =
+                        new TeacherSubject.TeacherSubjectBuilder();
+                TeacherSubject teacherSubject = teacherSubjectBuilder.build();
+                teacherCourse.setId(
+                        resultSet.getInt(1));
+                teacherSubject.setId(resultSet.getInt(2));
+                teacherCourseBuilder.setTeacherSubject(teacherSubject).
+                        setStartDate(resultSet.getString(3)).
+                        setEndDate(resultSet.getString(4));
+
+                teacherCourses.add(teacherCourse);
+            }
+            resultSet.close();
+            resultSet = statement.executeQuery("SELECT FOUND_ROWS()");
+
+            if (resultSet.next()) {
+                noOfRecords = resultSet.getInt(1);
+            }
+            connection.commit();
+        } catch (SQLException e) {
+            LOGGER.debug("SQLException ((TeacherCourse - findAllUsers): " + e);
+            throw new DaoException(e);
+        } finally {
+            try {
+                assert statement!=null;
+                statement.close();
+            } catch (SQLException e) {
+                LOGGER.debug("SQLException ((TeacherCourse - findAllUsers): " + e);
+            }
+        }
+        return teacherCourses;
+    }
+
+    public int getNoOfRecords() {
+        return noOfRecords; }
+
+    @Override
+    public List<TeacherCourse> findAllEntity() throws DaoException {
+        LOGGER.info("Start find all teacher course.");
         List<TeacherCourse> teacherCourses = new ArrayList<>();
         Statement statement = null;
         try {
@@ -76,7 +130,7 @@ public class TeacherCourseDaoImpl extends BaseDao implements TeacherCourseDao {
 
     @Override
     public TeacherCourse findEntityById(Long id) throws DaoException {
-        LOGGER.debug("Start find course teacher by ID.");
+        LOGGER.info("Start find course teacher by ID.");
         TeacherCourse.TeacherCourseBuilder teacherCourseBuilder =
                 new TeacherCourse.TeacherCourseBuilder();
         TeacherCourse teacherCourse = teacherCourseBuilder.build();
@@ -145,7 +199,7 @@ public class TeacherCourseDaoImpl extends BaseDao implements TeacherCourseDao {
     @Override
     public boolean create(
             TeacherCourse teacherCourse) throws DaoException {
-        LOGGER.debug("Create teacherCourse.");
+        LOGGER.info("Create teacherCourse.");
         PreparedStatement statement = null;
         try {
             statement = connection.
@@ -180,7 +234,7 @@ public class TeacherCourseDaoImpl extends BaseDao implements TeacherCourseDao {
     @Override
     public boolean update(
             TeacherCourse teacherCourse) throws DaoException {
-        LOGGER.debug("Update teacherCourse.");
+        LOGGER.info("Update teacherCourse.");
         PreparedStatement statement = null;
         try {
             statement = connection.
@@ -215,7 +269,7 @@ public class TeacherCourseDaoImpl extends BaseDao implements TeacherCourseDao {
     @Override
     public List<TeacherCourse> findCourseByStartDate(
             String namePattern) throws DaoException {
-        LOGGER.debug("Start find course teacher by StartDate.");
+        LOGGER.info("Start find course teacher by StartDate.");
         List<TeacherCourse> teacherCourses = new ArrayList<>();
         PreparedStatement statement = null;
         try {
@@ -258,7 +312,7 @@ public class TeacherCourseDaoImpl extends BaseDao implements TeacherCourseDao {
     @Override
     public List<TeacherCourse> findCourseBySubject(
             String namePattern) throws DaoException {
-        LOGGER.debug("Start find course teacher by StartDate.");
+        LOGGER.info("Start find course teacher by StartDate.");
         List<TeacherCourse> teacherCourses = new ArrayList<>();
         PreparedStatement statement = null;
         try {

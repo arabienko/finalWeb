@@ -1,6 +1,9 @@
 package by.arabienko.onlineSchool.valid;
 
-import java.text.SimpleDateFormat;
+import by.arabienko.onlineSchool.controller.ServletSQLRequest;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,15 +11,19 @@ import java.util.regex.Pattern;
  * The type Data validator.
  */
 public class DataValidator {
-    private static final Pattern LOGIN_PATTERN = Pattern.compile("^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$");
+    private static final Logger LOGGER =
+            LogManager.getLogger(DataValidator.class);
+    private static final Pattern LOGIN_PATTERN = Pattern.compile("^(?=[a-zA-Z0-9._]{4,20}$)(?!.*[_.]{2})[^_.].*[^_.]$");
     private static final Pattern NAME_SURNAME_PATRONYMIC_PATTERN = Pattern.compile("[a-zA-Zа-яА-Я]{3,20}");
     //Minimum eight characters, at least one letter and one number:
     private static final Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{5,}$");
     private static final Pattern SUBJECT_DESCRIPTION_PATTERN = Pattern.compile("[A-Za-zА-Яа-яёЁ0-9][A-Za-zА-Яа-яёЁ,.()\\s0-9]{4,399}");
-    private static final Pattern SUBJECT_NAME_PATTERN = Pattern.compile("^[a-zA-Z0-9!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$");
+    private static final Pattern SUBJECT_NAME_PATTERN = Pattern.compile("^[a-zA-Z0-9!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>/?]*$");
     private static final Pattern INPUT_IDENTIFIABLE_ID_PATTERN = Pattern.compile("[\\d]{1,}$");
-    private static final Pattern DATE_PATTERN = Pattern.compile("\\d{4}\\-\\d{2}-\\d{2}");
-    private static final Pattern DATE_OF_WEEk_TIME_PATTERN = Pattern.compile("^[A-z]*\\,\\s\\d{2}\\-\\d{2}");
+    private static final Pattern DATE_PATTERN = Pattern.compile("\\d{4}-\\d{2}-\\d{2}");
+    private static final Pattern DATE_OF_WEEK_TIME_PATTERN = Pattern.compile("^[A-z]*,\\s\\d{2}-\\d{2}");
+    private static final Pattern PHONE_PATTERN = Pattern.compile("\\+\\d{12}");
+
 
     public static boolean isDateFormat(String date){
         Matcher matcher = DATE_PATTERN.matcher(date);
@@ -117,7 +124,7 @@ public class DataValidator {
      * @return the boolean
      */
     public static boolean isDateOfWeekValid(String pattern) {
-        Matcher matcher = DATE_OF_WEEk_TIME_PATTERN.matcher(pattern);
+        Matcher matcher = DATE_OF_WEEK_TIME_PATTERN.matcher(pattern);
         return matcher.matches();
     }
 

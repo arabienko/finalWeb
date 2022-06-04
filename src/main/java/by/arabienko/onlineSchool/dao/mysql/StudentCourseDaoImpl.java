@@ -16,16 +16,79 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
+public class StudentCourseDaoImpl extends BaseDao
+        implements StudentCourseDao {
     private static final Logger LOGGER =
             LogManager.getLogger(StudentCourseDaoImpl.class);
+    private int noOfRecords;
 
     private static final String SQL_SELECT_ALL_STUDENT_COURSE =
             "SELECT id, course_id, student_id, status FROM student_course";
 
-    @Override
-    public List<StudentCourse> findAll() throws DaoException, SQLException {
-        LOGGER.debug("Start find all student course.");
+
+    public List<StudentCourse> findAll(int offset, int noOfRecords)
+            throws DaoException, SQLException {
+        String SQL_SELECT_ALL_STUDENTCOURSE =
+                "SELECT SQL_CALC_FOUND_ROWS id, course_id, student_id, status " +
+                        "FROM student_course limit " + offset + ", " + noOfRecords;
+        LOGGER.info("Start find all student course.");
+        List<StudentCourse> studentCourses =
+                new ArrayList<>();
+        Statement statement = null;
+        if (connection==null) {
+            LOGGER.error("ERROR Connection");
+        }
+        try {
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.
+                    executeQuery(SQL_SELECT_ALL_STUDENTCOURSE);
+            while (resultSet.next()) {
+                StudentCourse.StudentCourseBuilder studentCourseBuilder =
+                        new StudentCourse.StudentCourseBuilder();
+                StudentCourse studentCourse = studentCourseBuilder.build();
+                TeacherCourse.TeacherCourseBuilder teacherCourseBuilder =
+                        new TeacherCourse.TeacherCourseBuilder();
+                TeacherCourse teacherCourse = teacherCourseBuilder.build();
+                UserInfo.UserBuilder userBuilder = new UserInfo.UserBuilder();
+                UserInfo userInfo = userBuilder.build();
+                studentCourse.setId(
+                        resultSet.getInt(1));
+                teacherCourse.setId(resultSet.getInt(2));
+                userBuilder.setId(resultSet.getInt(3));
+                studentCourseBuilder.setTeacherCourse(teacherCourse).
+                        setUserInfo(userInfo).setStatus(
+                                resultSet.getString(4));
+                studentCourses.add(studentCourse);
+            }
+            resultSet.close();
+            resultSet = statement.executeQuery("SELECT FOUND_ROWS()");
+
+            if (resultSet.next()) {
+                this.noOfRecords = resultSet.getInt(1);
+            }
+            connection.commit();
+        } catch (SQLException e) {
+            LOGGER.debug("SQLException " +
+                    "(StudentCourse - findAllUsers): " + e);
+            connection.rollback();
+            throw new DaoException(e);
+        } finally {
+            try {
+                assert statement!=null;
+                statement.close();
+
+            } catch (SQLException e) {
+                LOGGER.debug("SQLException " +
+                        "(StudentCourse - findAllUsers): " + e);
+            }
+        }
+        return studentCourses;
+    }
+    public int getNoOfRecords() { return noOfRecords; }
+
+    public List<StudentCourse> findAllEntity()
+            throws DaoException, SQLException {
+        LOGGER.info("Start find all student course.");
         List<StudentCourse> studentCourses =
                 new ArrayList<>();
         Statement statement = null;
@@ -56,7 +119,8 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
             }
             connection.commit();
         } catch (SQLException e) {
-            LOGGER.debug("SQLException ((StudentCourse - findAllUsers): " + e);
+            LOGGER.debug("SQLException " +
+                    "(StudentCourse - findAllUsers): " + e);
             connection.rollback();
             throw new DaoException(e);
         } finally {
@@ -64,7 +128,8 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
                 assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException ((StudentCourse - findAllUsers): " + e);
+                LOGGER.debug("SQLException " +
+                        "(StudentCourse - findAllUsers): " + e);
             }
         }
         return studentCourses;
@@ -74,8 +139,9 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
             "SELECT id, course_id, student_id, status FROM student_course WHERE id=?";
 
     @Override
-    public StudentCourse findEntityById(Long id) throws DaoException {
-        LOGGER.debug("Start find course student by ID.");
+    public StudentCourse findEntityById(Long id)
+            throws DaoException {
+        LOGGER.info("Start find course student by ID.");
         if (connection==null) {
             LOGGER.error("ERROR Connection");
         }
@@ -104,21 +170,24 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
                                 resultSet.getString(4));
             }
         } catch (SQLException e) {
-            LOGGER.debug("SQLException (studentCourse - FindByID): " + e);
+            LOGGER.debug("SQLException " +
+                    "(studentCourse - FindByID): " + e);
             throw new DaoException(e);
         } finally {
             try {
                 assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (studentCourse - FindByID): " + e);
+                LOGGER.debug("SQLException " +
+                        "(studentCourse - FindByID): " + e);
             }
         }
         return studentCourse;
     }
 
     @Override
-    public boolean delete(StudentCourse studentCourse) throws DaoException {
+    public boolean delete(StudentCourse studentCourse)
+            throws DaoException {
         LOGGER.debug("Deleting subject is not supported.");
         throw new UnsupportedOperationException(
                 "Deleting subject is not supported.");
@@ -136,7 +205,7 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
 
     @Override
     public boolean create(StudentCourse studentCourse) throws DaoException {
-        LOGGER.debug("Create teacherCourse.");
+        LOGGER.info("Create teacherCourse.");
         if (connection==null) {
             LOGGER.error("ERROR Connection");
         }
@@ -176,7 +245,7 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
 
     @Override
     public boolean update(StudentCourse studentCourse) throws DaoException {
-        LOGGER.debug("Update studentCourse.");
+        LOGGER.info("Update studentCourse.");
         if (connection==null) {
             LOGGER.error("ERROR Connection");
         }
@@ -219,8 +288,9 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
                     "AND tc.id = sc.course_id";
 
     @Override
-    public List<StudentCourse> findStudentCourseBySubject(String namePattern) throws DaoException {
-        LOGGER.debug("Start find course teacher by subject.");
+    public List<StudentCourse> findStudentCourseBySubject(
+            String namePattern) throws DaoException {
+        LOGGER.info("Start find course by subject.");
         if (connection==null) {
             LOGGER.error("ERROR Connection");
         }
@@ -254,7 +324,7 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
             }
         } catch (SQLException e) {
             LOGGER.debug("SQLException (" +
-                    "studentCourse,findCourseByStartDate): " + e);
+                    "studentCourse,findCourseBySubject): " + e);
             throw new DaoException(e);
         } finally {
             try {
@@ -262,14 +332,68 @@ public class StudentCourseDaoImpl extends BaseDao implements StudentCourseDao {
                 statement.close();
             } catch (SQLException e) {
                 LOGGER.debug("SQLException (" +
-                        "studentCourse,findCourseByStartDate): " + e);
+                        "studentCourse,findCourseBySubject): " + e);
+            }
+        }
+        return studentCourses;
+    }
+
+    private static final String SQL_SELECT_STUDENT_COURSE_BY_STUDENT_ID =
+            "SELECT id, course_id, student_id, status FROM student_course WHERE student_id=?";
+
+    @Override
+    public List<StudentCourse> findStudentCourseByStudentID(Long id) throws DaoException {
+        LOGGER.info("Start find course by student.");
+        if (connection==null) {
+            LOGGER.error("ERROR Connection");
+        }
+        List<StudentCourse> studentCourses = new ArrayList<>();
+        StudentCourse.StudentCourseBuilder studentCourseBuilder =
+                new StudentCourse.StudentCourseBuilder();
+        StudentCourse studentCourse = studentCourseBuilder.build();
+        TeacherCourse.TeacherCourseBuilder teacherCourseBuilder =
+                new TeacherCourse.TeacherCourseBuilder();
+        TeacherCourse teacherCourse = teacherCourseBuilder.build();
+        UserInfo.UserBuilder userBuilder = new UserInfo.UserBuilder();
+        UserInfo userInfo = userBuilder.build();
+        PreparedStatement statement = null;
+        try {
+            statement = connection.
+                    prepareStatement(SQL_SELECT_STUDENT_COURSE_BY_STUDENT_ID);
+            statement.setString(1, String.valueOf(id));
+            ResultSet resultSet =
+                    statement.executeQuery();
+            while (resultSet.next()) {
+                studentCourse.setId(
+                        resultSet.getInt(1));
+                teacherCourse.setId(resultSet.getInt(2));
+                userBuilder.setId(resultSet.getInt(3));
+                studentCourseBuilder.setTeacherCourse(teacherCourse).
+                        setUserInfo(userInfo).setStatus(
+                                resultSet.getString(4));
+                if (!studentCourses.contains(studentCourse)) {
+                    studentCourses.add(studentCourse);
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.debug("SQLException (" +
+                    "studentCourse,findCourseByStudent): " + e);
+            throw new DaoException(e);
+        } finally {
+            try {
+                assert statement!=null;
+                statement.close();
+            } catch (SQLException e) {
+                LOGGER.debug("SQLException (" +
+                        "studentCourse,findCourseByStudent): " + e);
             }
         }
         return studentCourses;
     }
 
     private static final String SQL_IS_STUDENT_COURSE_UNIQUE =
-            "SELECT course_id , student_id FROM student_course WHERE course_id=? AND student_id=?";
+            "SELECT course_id , student_id FROM " +
+                    "student_course WHERE course_id=? AND student_id=?";
 
     @Override
     public boolean isUnique(long patternCourse, long patternStudent)

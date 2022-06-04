@@ -15,7 +15,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScheduleDaoImpl extends BaseDao implements ScheduleDao {
+public class ScheduleDaoImpl extends BaseDao
+        implements ScheduleDao {
     private static final Logger LOGGER =
             LogManager.getLogger(ScheduleDaoImpl.class);
 
@@ -23,8 +24,13 @@ public class ScheduleDaoImpl extends BaseDao implements ScheduleDao {
             "SELECT id, course_id, date_time FROM schedule";
 
     @Override
-    public List<Schedule> findAll() throws DaoException {
-        LOGGER.debug("Start find all teacher subjects.");
+    public List<Schedule> findAll(int offset, int noOfRecords) throws DaoException, SQLException {
+        return null;
+    }
+
+    @Override
+    public List<Schedule> findAllEntity() throws DaoException {
+        LOGGER.info("Start find all teacher subjects.");
         List<Schedule> schedules = new ArrayList<>();
         Statement statement = null;
         try {
@@ -43,14 +49,16 @@ public class ScheduleDaoImpl extends BaseDao implements ScheduleDao {
                 schedules.add(schedule);
             }
         } catch (SQLException e) {
-            LOGGER.debug("SQLException (find all schedule) " + e);
+            LOGGER.debug("SQLException " +
+                    "(find all schedule) " + e);
             throw new DaoException(e);
         } finally {
             try {
                 assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (find all schedule) " + e);
+                LOGGER.debug("SQLException " +
+                        "(find all schedule) " + e);
             }
         }
         return schedules;
@@ -90,7 +98,8 @@ public class ScheduleDaoImpl extends BaseDao implements ScheduleDao {
             "SELECT id, course_id, date_time FROM schedule WHERE id=?";
 
     @Override
-    public Schedule findEntityById(Long id) throws DaoException {
+    public Schedule findEntityById(Long id)
+            throws DaoException {
         LOGGER.debug("Start find all teacher subjects.");
         PreparedStatement statement = null;
         Schedule.ScheduleBuilder scheduleBuilder =
@@ -110,14 +119,16 @@ public class ScheduleDaoImpl extends BaseDao implements ScheduleDao {
                         setDateTime(resultSet.getString(3));
             }
         } catch (SQLException e) {
-            LOGGER.debug("SQLException (find schedule by ID) " + e);
+            LOGGER.debug("SQLException " +
+                    "(find schedule by ID) " + e);
             throw new DaoException(e);
         } finally {
             try {
                 assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (find schedule by ID) " + e);
+                LOGGER.debug("SQLException " +
+                        "(find schedule by ID) " + e);
             }
         }
         return schedule;
@@ -160,7 +171,8 @@ public class ScheduleDaoImpl extends BaseDao implements ScheduleDao {
             + "(course_id, date_time) VALUES(?, ?)";
 
     @Override
-    public boolean create(Schedule schedule) throws DaoException {
+    public boolean create(Schedule schedule)
+            throws DaoException {
         LOGGER.debug("Create schedule.");
         PreparedStatement statement = null;
         try {
@@ -193,7 +205,8 @@ public class ScheduleDaoImpl extends BaseDao implements ScheduleDao {
             "UPDATE schedule SET course_id=? , date_time=? WHERE id = ?";
 
     @Override
-    public boolean update(Schedule schedule) throws DaoException {
+    public boolean update(Schedule schedule)
+            throws DaoException {
         LOGGER.debug("Update schedule.");
         PreparedStatement statement = null;
         try {

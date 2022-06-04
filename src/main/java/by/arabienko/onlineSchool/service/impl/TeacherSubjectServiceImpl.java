@@ -18,7 +18,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
-public class TeacherSubjectServiceImpl
+public class TeacherSubjectServiceImpl extends ServiceImpl
         implements TeacherSubjectService {
     private static final Logger LOGGER =
             LogManager.getLogger(TeacherSubjectServiceImpl.class);
@@ -38,7 +38,7 @@ public class TeacherSubjectServiceImpl
             transaction = factory.createTransaction();
             transaction.createDao(teacherSubjectDao);
             for (TeacherSubject subject : teacherSubjectDao.
-                    findAll()) {
+                    findAllEntity()) {
                 TeacherSubject.TeacherSubjectBuilder subjectBuilder =
                         new TeacherSubject.TeacherSubjectBuilder();
                 TeacherSubject teacherSubject = subjectBuilder.build();

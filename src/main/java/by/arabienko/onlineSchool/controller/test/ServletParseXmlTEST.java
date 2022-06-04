@@ -47,11 +47,7 @@ public class ServletParseXmlTEST extends HttpServlet {
         response.setCharacterEncoding("utf8");
         StudentCourseService service = new StudentCourseServiceImpl();
         List<StudentCourse> courseStudent = null;
-        try {
-            courseStudent = service.findAll();
-        } catch (ExceptionService | PersistentException e) {
-            e.printStackTrace();
-        }
+
         List<City> cities = new ArrayList<>();
         PrintWriter out= response.getWriter();
         out.println(request.getMethod());
@@ -73,7 +69,7 @@ public class ServletParseXmlTEST extends HttpServlet {
         System.out.println(parse);
         request.setAttribute("cities", cities);
        // request.setAttribute("parse", cities.get(0).getId());
-        request.getRequestDispatcher("/outResult.jsp").
+        request.getRequestDispatcher("/studentCourses.jsp").
                 forward(request, response);
     }
 }

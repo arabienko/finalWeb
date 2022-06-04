@@ -3,11 +3,36 @@
          xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-    <display-name>taskWebProject</display-name>
+    <display-name>finalWeb</display-name>
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-        <welcome-file>index.html</welcome-file>
+        <welcome-file>start.jsp</welcome-file>
     </welcome-file-list>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    <servlet>
+        <servlet-name>my</servlet-name>
+        <servlet-class>by.arabienko.onlineSchool.controller.ServletSQLRequest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>my</servlet-name>
+        <url-pattern>/my</url-pattern>
+        <url-pattern>/cs.do</url-pattern>
+    </servlet-mapping>
+    <jsp-config>
+        <taglib>
+            <taglib-uri>customtags</taglib-uri>
+            <taglib-location>/WEB-INF/tld/custom.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/jsp/error/error.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.RuntimeException</exception-type>
+        <location>/jsp/error/error.jsp</location>
+    </error-page>
     <filter>
         <filter-name>EncodingFilter</filter-name>
         <filter-class>by.arabienko.onlineSchool.controller.filter.EncodingFilter</filter-class>
@@ -22,7 +47,14 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1"
     </filter>
     <filter-mapping>
         <filter-name>FilterRequest</filter-name>
-        <url-pattern>*.jsp</url-pattern>
+        <url-pattern>/*</url-pattern>
     </filter-mapping>
-
+    <filter>
+        <filter-name>TypeCommandFilter</filter-name>
+        <filter-class>by.arabienko.onlineSchool.controller.filter.TypeCommandFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>TypeCommandFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

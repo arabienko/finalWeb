@@ -28,7 +28,13 @@
         <Logger name="by.arabienko.onlineSchool.controller" level="debug" additivity="false">
             <AppenderRef ref="LogFile"/>
         </Logger>
+        <Logger name="by.arabienko.onlineSchool.view" level="debug" additivity="false">
+            <AppenderRef ref="LogFile"/>
+        </Logger>
         <Logger name="by.arabienko.onlineSchool.service" level="debug" additivity="false">
+            <AppenderRef ref="LogFile"/>
+        </Logger>
+        <Logger name="by.arabienko.onlineSchool.service.impl" level="debug" additivity="false">
             <AppenderRef ref="LogFile"/>
         </Logger>
         <Logger name="Console" level="info">

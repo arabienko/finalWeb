@@ -20,7 +20,9 @@ public class PropertyLoader {
     public static Properties loadProperty(String propertyPath) {
         Properties properties = new Properties();
         try {
-            properties.load(Objects.requireNonNull(ConnectionPool.class.getClassLoader().getResourceAsStream(propertyPath)));
+            properties.load(Objects.requireNonNull(
+                    ConnectionPool.class.getClassLoader().
+                            getResourceAsStream(propertyPath)));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

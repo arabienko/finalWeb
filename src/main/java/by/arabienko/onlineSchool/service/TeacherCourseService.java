@@ -20,6 +20,9 @@ public interface TeacherCourseService extends Service {
      */
     List<TeacherCourse> findAll() throws ExceptionService, PersistentException;
 
+    List<TeacherCourse> findAll(int offset, int noOfRecords) throws ExceptionService, PersistentException;
+
+
     /**
      * @param id TeacherCourse
      * @return TeacherCourse
@@ -75,4 +78,6 @@ public interface TeacherCourseService extends Service {
      * @throws PersistentException
      */
     List<TeacherCourse> findCourseBySubject(String namePattern) throws ExceptionService, PersistentException;
+
+    int getNoOfRecords();
 }

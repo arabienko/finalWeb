@@ -1,7 +1,8 @@
+
     <html>
     <head><title>Footer</title></head>
     <body>
     <div class="container-fluid p-5 my-4 mt-3 border bg-secondary text-white">
-        <p>&#169; 2021-2022, Arabiyenka Tatsiana</p>
+        <ctg:info-footer/>
     </div>
     </body></html>

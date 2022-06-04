@@ -14,7 +14,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class UserDaoImpl extends BaseDao implements UserDao {
     private static final Logger LOGGER =
@@ -40,11 +39,13 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     private static final String SQL_FIND_BY_ADMIN =
             "SELECT id, login, password, role FROM users WHERE role='0'";
 
-    public UserDaoImpl() {
+    @Override
+    public List<User> findAll(int offset, int noOfRecords) throws DaoException, SQLException {
+        return null;
     }
 
     @Override
-    public List<User> findAll() throws DaoException {
+    public List<User> findAllEntity() throws DaoException {
         LOGGER.debug("Start find all user.");
         List<User> users = new ArrayList<>();
         Statement statement = null;
@@ -65,14 +66,16 @@ public class UserDaoImpl extends BaseDao implements UserDao {
                 users.add(user);
             }
         } catch (SQLException e) {
-            LOGGER.debug("SQLException (findAllUsers) " + e);
+            LOGGER.debug("SQLException " +
+                    "(findAllUsers) " + e);
             throw new DaoException(e);
         } finally {
             try {
                 assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (findAllUsers) " + e);
+                LOGGER.debug("SQLException " +
+                        "(findAllUsers) " + e);
             }
         }
         return users;
@@ -115,7 +118,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     }
 
     @Override
-    public Optional<User> findEntityByParam(
+    public User findEntityByParam(
             final String log, String pass) throws DaoException {
         LOGGER.debug("Start find user by param.");
         User user = new User();
@@ -148,37 +151,42 @@ public class UserDaoImpl extends BaseDao implements UserDao {
                 LOGGER.debug("SQLException " + e);
             }
         }
-        return Optional.of(user);
+        return user;
     }
 
     @Override
     public boolean delete(final User user)
             throws DaoException {
-        LOGGER.debug("Delete is not supported the operation.");
+        LOGGER.debug("Delete is not " +
+                "supported the operation.");
         throw new UnsupportedOperationException();
     }
 
     @Override
     public boolean delete(final Long id)
             throws DaoException {
-        LOGGER.debug("Delete is not supported the operation.");
+        LOGGER.debug("Delete is not " +
+                "supported the operation.");
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public boolean create(final User user) {
-        LOGGER.debug("Create user.");
+    public boolean create(final User user) throws DaoException {
+        LOGGER.info("Create user.");
         PreparedStatement statement = null;
         try {
-            statement = connection.
-                    prepareStatement(SQL_CREATE_USER);
-            statement.setString(
-                    1, user.getLogin());
-            statement.setString(
-                    2, DigestUtils.sha512Hex(user.getPassword()));
-            statement.setInt(
-                    3, user.getRole());
-            statement.executeUpdate();
+            if (isLoginUnique(user.getLogin())) {
+                statement = connection.
+                        prepareStatement(SQL_CREATE_USER);
+                statement.setString(
+                        1, user.getLogin());
+                statement.setString(
+                        2, DigestUtils.
+                                sha512Hex(user.getPassword()));
+                statement.setLong(
+                        3, user.getRole());
+                statement.executeUpdate();
+            }
         } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             return false;
@@ -195,7 +203,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
     @Override
     public boolean update(final User user) {
-        LOGGER.debug("Update user.");
+        LOGGER.info("Update user.");
         PreparedStatement statement = null;
         try {
             statement = connection.
@@ -225,7 +233,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     @Override
     public User findUserByLogin(
             final String patternName) throws DaoException {
-        LOGGER.debug("Find user by login.");
+        LOGGER.info("Find user by login.");
         User user = new User();
         PreparedStatement statement = null;
         try {
@@ -265,7 +273,8 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         boolean result = true;
         PreparedStatement statement = null;
         try {
-            statement = connection.prepareStatement(SQL_IS_LOGIN_UNIQUE);
+            statement = connection.
+                    prepareStatement(SQL_IS_LOGIN_UNIQUE);
             statement.setString(1, patternLogin);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
@@ -287,17 +296,9 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     }
 
     @Override
-    public boolean registerUser(User user) throws DaoException {
-        if (!isLoginUnique(user.getLogin())) {
-            return false;
-        }
-        return create(user);
-    }
-
-    @Override
     public User findStudentById(
             final Long id) throws DaoException {
-        LOGGER.debug("Start find user by ID.");
+        LOGGER.info("Start find user by ID.");
         User user = new User();
         PreparedStatement statement = null;
         try {
@@ -333,7 +334,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     @Override
     public User findTeacherById(
             final Long id) throws DaoException {
-        LOGGER.debug("Start find user by ID.");
+        LOGGER.info("Start find user by ID.");
         User user = new User();
         PreparedStatement statement = null;
         try {
@@ -368,7 +369,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
     @Override
     public User findAdmin() throws DaoException {
-        LOGGER.debug("Start find admin.");
+        LOGGER.info("Start find admin.");
         User user = new User();
         PreparedStatement statement = null;
         try {

@@ -17,6 +17,12 @@ public interface StudentCourseDao extends Dao<Long, StudentCourse> {
      * @throws DaoException
      */
     List<StudentCourse> findStudentCourseBySubject(String namePattern) throws DaoException;
+    /**
+     * @param id student
+     * @return list courses for student
+     * @throws DaoException
+     */
+    List<StudentCourse> findStudentCourseByStudentID(Long id) throws DaoException;
 
     /**
      * @param patternCourse id course

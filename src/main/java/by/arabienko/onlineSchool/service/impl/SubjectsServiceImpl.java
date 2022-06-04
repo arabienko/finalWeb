@@ -34,7 +34,7 @@ public class SubjectsServiceImpl extends ServiceImpl implements SubjectService {
         try {
             transaction = factory.createTransaction();
             transaction.createDao(subjectDAO);
-            result = subjectDAO.findAll();
+            result = subjectDAO.findAllEntity();
             transaction.commit();
         } catch (DaoException | PersistentException | SQLException e) {
             LOGGER.debug("Service error findAll " + e);

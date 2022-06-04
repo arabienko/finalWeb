@@ -6,6 +6,7 @@ import by.arabienko.onlineSchool.entity.TeacherCourse;
 import java.util.List;
 
 public interface TeacherCourseDao extends Dao<Long, TeacherCourse> {
-    List<TeacherCourse> findCourseByStartDate(String namePattern) throws DaoException, DaoException;
+    List<TeacherCourse> findCourseByStartDate(String namePattern) throws DaoException;
     List<TeacherCourse> findCourseBySubject(String namePattern) throws DaoException;
+    int getNoOfRecords();
 }

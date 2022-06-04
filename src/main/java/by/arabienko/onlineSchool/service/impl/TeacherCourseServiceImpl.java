@@ -33,16 +33,45 @@ public class TeacherCourseServiceImpl extends ServiceImpl implements TeacherCour
     UserInfoDao teacherDao = daoFactory.getUserInfoDAO();
     TransactionFactory factory = TransactionFactoryImpl.getInstance();
     Transaction transaction;
+    private int noOfRecords;
 
     @Override
-    public List<TeacherCourse> findAll()
+    public List<TeacherCourse> findAll() throws ExceptionService, PersistentException {
+        return null;
+    }
+
+    @Override
+    public List<TeacherCourse> findAll(int offset, int noOfRecords)
             throws ExceptionService, PersistentException {
-        List<TeacherCourse> teacherCourses;
+        List<TeacherCourse> teacherCourses = new ArrayList<>();
         try {
             transaction = factory.createTransaction();
-            transaction.createDao(teacherCourseDao);
-            teacherCourses = teacherCourseDao.
-                    findAll();
+            transaction.createDao(teacherCourseDao,
+                    teacherSubjectDao, subjectDao, teacherDao);
+            for (TeacherCourse t :
+                    teacherCourseDao.findAll(offset, noOfRecords)) {
+                Long idTS = t.getTeacherSubject().getId();
+                TeacherSubject ts = teacherSubjectDao.findEntityById(idTS);
+                UserInfo teacher = teacherDao.findEntityById(
+                        ts.getUserInfo().getId());
+                Long idS = ts.getSubject().getId();
+                Subject subject =
+                        subjectDao.findEntityById(idS);
+                TeacherCourse.TeacherCourseBuilder teacherCourseBuilder =
+                        new TeacherCourse.TeacherCourseBuilder();
+                TeacherCourse teacherCourse = teacherCourseBuilder.build();
+                TeacherSubject.TeacherSubjectBuilder teacherSubjectBuilder =
+                        new TeacherSubject.TeacherSubjectBuilder();
+                TeacherSubject teacherSubject = teacherSubjectBuilder.build();
+                teacherSubject.setId(t.getTeacherSubject().getId());
+                teacherSubjectBuilder.setSubject(subject).setUserInfo(teacher);
+                teacherCourse.setId(t.getId());
+                teacherCourseBuilder.setTeacherSubject(teacherSubject).
+                        setStartDate(t.getStartDate()).setEndDate(t.getEndDate());
+                teacherCourses.add(teacherCourse);
+            }
+            this.noOfRecords = teacherCourseDao.getNoOfRecords();
+            System.out.println("noOfRecords = teacherCourseDao.getNoOfRecords(); "+noOfRecords);
             transaction.commit();
         } catch (DaoException | PersistentException | SQLException e) {
             LOGGER.debug("Service error findAll " + e);
@@ -57,6 +86,9 @@ public class TeacherCourseServiceImpl extends ServiceImpl implements TeacherCour
         return teacherCourses;
     }
 
+    public int getNoOfRecords() {
+        return noOfRecords; }
+
     @Override
     public TeacherCourse findEntityById(Long id)
             throws ExceptionService, PersistentException {
@@ -65,6 +97,7 @@ public class TeacherCourseServiceImpl extends ServiceImpl implements TeacherCour
             transaction = factory.createTransaction();
             transaction.createDao(teacherCourseDao);
             teacherCourse = teacherCourseDao.findEntityById(id);
+
             transaction.commit();
         } catch (DaoException | PersistentException e) {
             LOGGER.debug("Service error find by id " + e);
@@ -139,7 +172,7 @@ public class TeacherCourseServiceImpl extends ServiceImpl implements TeacherCour
     @Override
     public List<TeacherCourse> findCourseByStartDate(
             String namePattern) throws ExceptionService, PersistentException {
-        List<TeacherCourse> teacherCourses;
+        List<TeacherCourse> teacherCourses = new ArrayList<>();
         if (!DataValidator.isDateFormat(namePattern)
                 || Objects.equals(namePattern, "")) {
             LOGGER.debug("Date is not valid.");
@@ -147,9 +180,29 @@ public class TeacherCourseServiceImpl extends ServiceImpl implements TeacherCour
         }
         try {
             transaction = factory.createTransaction();
-            transaction.createDao(teacherCourseDao);
-            teacherCourses = teacherCourseDao.
-                    findCourseByStartDate(namePattern);
+            transaction.createDao(teacherCourseDao,
+                    teacherSubjectDao, subjectDao, teacherDao);
+            for (TeacherCourse t : teacherCourseDao.
+                    findCourseByStartDate(namePattern)) {
+                Long idTS = t.getTeacherSubject().getId();
+                TeacherSubject ts = teacherSubjectDao.findEntityById(idTS);
+                UserInfo teacher = teacherDao.findEntityById(ts.getUserInfo().getId());
+                Long idS = ts.getSubject().getId();
+                Subject subject =
+                        subjectDao.findEntityById(idS);
+                TeacherCourse.TeacherCourseBuilder teacherCourseBuilder =
+                        new TeacherCourse.TeacherCourseBuilder();
+                TeacherCourse teacherCourse = teacherCourseBuilder.build();
+                TeacherSubject.TeacherSubjectBuilder teacherSubjectBuilder =
+                        new TeacherSubject.TeacherSubjectBuilder();
+                TeacherSubject teacherSubject = teacherSubjectBuilder.build();
+                teacherSubject.setId(t.getTeacherSubject().getId());
+                teacherSubjectBuilder.setSubject(subject).setUserInfo(teacher);
+                teacherCourse.setId(t.getId());
+                teacherCourseBuilder.setTeacherSubject(teacherSubject).
+                        setStartDate(t.getStartDate()).setEndDate(t.getEndDate());
+                teacherCourses.add(teacherCourse);
+            }
             transaction.commit();
         } catch (DaoException | PersistentException e) {
             LOGGER.debug("Service error find by start date " + e);
@@ -177,7 +230,7 @@ public class TeacherCourseServiceImpl extends ServiceImpl implements TeacherCour
         try {
             transaction = factory.createTransaction();
             transaction.createDao(teacherCourseDao,
-                    teacherSubjectDao,subjectDao,teacherDao);
+                    teacherSubjectDao, subjectDao, teacherDao);
             for (TeacherCourse t : teacherCourseDao.
                     findCourseBySubject(namePattern)) {
                 Long idTS = t.getTeacherSubject().getId();

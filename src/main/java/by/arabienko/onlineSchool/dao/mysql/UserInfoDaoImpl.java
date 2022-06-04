@@ -14,7 +14,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
+public class UserInfoDaoImpl extends BaseDao
+        implements UserInfoDao {
     private static final Logger LOGGER =
             LogManager.getLogger(UserInfoDaoImpl.class);
 
@@ -44,9 +45,14 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
             + "(id, surname, name, phone, pathImage) VALUES(?, ?, ?, ?, ?)";
 
     @Override
-    public List<UserInfo> findAll()
+    public List<UserInfo> findAll(int offset, int noOfRecords) throws DaoException, SQLException {
+        return null;
+    }
+
+    @Override
+    public List<UserInfo> findAllEntity()
             throws DaoException {
-        LOGGER.debug("Start find all users.");
+        LOGGER.info("Start find all users.");
         List<UserInfo> users = new ArrayList<>();
         Statement statement = null;
         try {
@@ -54,7 +60,8 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
             ResultSet resultSet = statement.
                     executeQuery(SQL_SELECT_ALL_USERS_INFO);
             while (resultSet.next()) {
-                UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
+                UserInfo.UserBuilder builder =
+                        new UserInfo.UserBuilder();
                 UserInfo userInfo = builder.build();
                 builder.setId(
                         resultSet.getInt(1));
@@ -69,14 +76,16 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
                 users.add(userInfo);
             }
         } catch (SQLException e) {
-            LOGGER.debug("SQLException (findAll) " + e);
+            LOGGER.debug("SQLException" +
+                    " (findAll) " + e);
             throw new DaoException(e);
         } finally {
             try {
                 assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (findAll) " + e);
+                LOGGER.debug("SQLException" +
+                        " (findAll) " + e);
             }
         }
         return users;
@@ -85,12 +94,14 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
     @Override
     public UserInfo findEntityById(Long id)
             throws DaoException {
-        LOGGER.debug("Start find users by id.");
+        LOGGER.info("Start find users by id.");
         PreparedStatement statement = null;
-        UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
+        UserInfo.UserBuilder builder =
+                new UserInfo.UserBuilder();
         UserInfo userInfo = builder.build();
         try {
-            statement = connection.prepareStatement(SQL_SELECT_USER_INFO_BY_ID);
+            statement = connection.
+                    prepareStatement(SQL_SELECT_USER_INFO_BY_ID);
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
@@ -106,14 +117,16 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
                         resultSet.getString(5));
             }
         } catch (SQLException e) {
-            LOGGER.debug("SQLException (findUserBySurname) " + e);
+            LOGGER.debug("SQLException " +
+                    "(findUserBySurname) " + e);
             throw new DaoException(e);
         } finally {
             try {
                 assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserBySurname) " + e);
+                LOGGER.debug("SQLException " +
+                        "(findUserBySurname) " + e);
             }
         }
         return userInfo;
@@ -130,19 +143,25 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
     @Override
     public boolean delete(Long id)
             throws DaoException {
-        LOGGER.debug("Deleting user by ID is not supported.");
+        LOGGER.debug("Deleting user " +
+                "by ID is not supported.");
         throw new UnsupportedOperationException(
-                "Deleting user by ID is not supported.");
+                "Deleting user " +
+                        "by ID is not supported.");
     }
 
     @Override
     public boolean create(UserInfo userInfo)
             throws DaoException {
-        LOGGER.debug("Create user info.");
+        LOGGER.info("Create user info.");
         PreparedStatement statement = null;
+/*
+        int[ ] updateCounts;
+*/
         try {
             statement = connection.
                     prepareStatement(SQL_CREATE_USER_INFO);
+            /*statement.addBatch(SQL_CREATE_USER_INFO);*/
             statement.setLong(1, userInfo.getId());
             statement.setString(
                     2, userInfo.getSurname());
@@ -153,6 +172,9 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
             statement.setString(
                     5, userInfo.getPathImage());
             statement.executeUpdate();
+/*
+            updateCounts = statement.executeBatch();
+*/
         } catch (SQLException e) {
             LOGGER.debug("SQLException " + e);
             return false;
@@ -164,12 +186,15 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
                 LOGGER.debug("SQLException " + e);
             }
         }
+        LOGGER.debug("The batch command " +
+                "has been successfully written. ");
         return true;
     }
 
     @Override
-    public boolean update(UserInfo userInfo) throws DaoException {
-        LOGGER.debug("Update user info.");
+    public boolean update(UserInfo userInfo)
+            throws DaoException {
+        LOGGER.info("Update user info.");
         PreparedStatement statement = null;
         try {
             statement = connection.
@@ -204,15 +229,17 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
     @Override
     public List<UserInfo> findUserBySurname(
             String patternName) throws DaoException {
-        LOGGER.debug("Start find users by surname.");
+        LOGGER.info("Start find users by surname.");
         List<UserInfo> users = new ArrayList<>();
         PreparedStatement statement = null;
         try {
-            statement = connection.prepareStatement(SQL_SELECT_BY_SURNAME);
+            statement = connection.
+                    prepareStatement(SQL_SELECT_BY_SURNAME);
             statement.setString(1, patternName);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
+                UserInfo.UserBuilder builder =
+                        new UserInfo.UserBuilder();
                 UserInfo userInfo = builder.build();
                 builder.setId(
                         resultSet.getInt(1));
@@ -227,14 +254,16 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
                 users.add(userInfo);
             }
         } catch (SQLException e) {
-            LOGGER.debug("SQLException (findUserBySurname) " + e);
+            LOGGER.debug("SQLException " +
+                    "(findUserBySurname) " + e);
             throw new DaoException(e);
         } finally {
             try {
                 assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserBySurname) " + e);
+                LOGGER.debug("SQLException " +
+                        "(findUserBySurname) " + e);
             }
         }
         return users;
@@ -243,7 +272,7 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
     @Override
     public List<UserInfo> findUserTeacher()
             throws DaoException {
-        LOGGER.debug("Start find teacher users.");
+        LOGGER.info("Start find teacher users.");
         List<UserInfo> users = new ArrayList<>();
         Statement statement = null;
         try {
@@ -251,7 +280,8 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
             ResultSet resultSet = statement.
                     executeQuery(SQL_SELECT_ALL_TEACHER);
             while (resultSet.next()) {
-                UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
+                UserInfo.UserBuilder builder =
+                        new UserInfo.UserBuilder();
                 UserInfo user = builder.build();
                 user.setId(
                         resultSet.getInt(1));
@@ -266,14 +296,16 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
                 users.add(user);
             }
         } catch (SQLException e) {
-            LOGGER.debug("SQLException (findUserTeacher) " + e);
+            LOGGER.debug("SQLException " +
+                    "(findUserTeacher) " + e);
             throw new DaoException(e);
         } finally {
             try {
                 assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserTeacher) " + e);
+                LOGGER.debug("SQLException " +
+                        "(findUserTeacher) " + e);
             }
         }
         return users;
@@ -282,7 +314,7 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
     @Override
     public List<UserInfo> findUserStudent()
             throws DaoException {
-        LOGGER.debug("Start find student users.");
+        LOGGER.info("Start find student users.");
         List<UserInfo> users = new ArrayList<>();
         Statement statement = null;
         try {
@@ -290,7 +322,8 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
             ResultSet resultSet = statement.
                     executeQuery(SQL_SELECT_ALL_STUDENT);
             while (resultSet.next()) {
-                UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
+                UserInfo.UserBuilder builder =
+                        new UserInfo.UserBuilder();
                 UserInfo user = builder.build();
                 user.setId(
                         resultSet.getInt(1));
@@ -305,14 +338,16 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
                 users.add(user);
             }
         } catch (SQLException e) {
-            LOGGER.debug("SQLException (findUserStudent) " + e);
+            LOGGER.debug("SQLException " +
+                    "(findUserStudent) " + e);
             throw new DaoException(e);
         } finally {
             try {
                 assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserStudent) " + e);
+                LOGGER.debug("SQLException " +
+                        "(findUserStudent) " + e);
             }
         }
         return users;
@@ -321,8 +356,9 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
     @Override
     public UserInfo findUserAdmin()
             throws DaoException {
-        LOGGER.debug("Start find admin.");
-        UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
+        LOGGER.info("Start find admin.");
+        UserInfo.UserBuilder builder =
+                new UserInfo.UserBuilder();
         UserInfo user = builder.build();
         Statement statement = null;
         try {
@@ -342,14 +378,16 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
                         resultSet.getString(5));
             }
         } catch (SQLException e) {
-            LOGGER.debug("SQLException (findUserAdmin) " + e);
+            LOGGER.debug("SQLException " +
+                    "(findUserAdmin) " + e);
             throw new DaoException(e);
         } finally {
             try {
                 assert statement!=null;
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.debug("SQLException (findUserAdmin) " + e);
+                LOGGER.debug("SQLException " +
+                        "(findUserAdmin) " + e);
             }
         }
         return user;

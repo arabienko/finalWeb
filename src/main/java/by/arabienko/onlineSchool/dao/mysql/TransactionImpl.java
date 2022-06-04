@@ -41,7 +41,7 @@ public class TransactionImpl implements Transaction {
     public void commit() throws PersistentException {
         try {
             connection.commit();
-            LOGGER.debug("Commiting is good");
+            LOGGER.debug("Committing is good");
         } catch (SQLException e) {
             LOGGER.error("Committing is not possible. " + e);
             throw new PersistentException(e);

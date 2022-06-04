@@ -46,8 +46,13 @@ public class TeacherSubjectDaoImpl extends BaseDao implements TeacherSubjectDao 
                     " WHERE s.nameSubject=? AND ts.teacher_id = t.id AND ts.subject_id = s.id";
 
     @Override
-    public List<TeacherSubject> findAll() throws DaoException {
-        LOGGER.debug("Start find all teacher subjects.");
+    public List<TeacherSubject> findAll(int offset, int noOfRecords) throws DaoException, SQLException {
+        return null;
+    }
+
+    @Override
+    public List<TeacherSubject> findAllEntity() throws DaoException {
+        LOGGER.info("Start find all teacher subjects.");
         List<TeacherSubject> teacherSubjects = new ArrayList<>();
         Statement statement = null;
         try {
@@ -98,7 +103,7 @@ public class TeacherSubjectDaoImpl extends BaseDao implements TeacherSubjectDao 
 
     @Override
     public TeacherSubject findEntityById(Long id) throws DaoException {
-        LOGGER.debug("Start find TeacherSubject by ID.");
+        LOGGER.info("Start find TeacherSubject by ID.");
         TeacherSubject.TeacherSubjectBuilder teacherSubjectBuilder =
                 new TeacherSubject.TeacherSubjectBuilder();
         TeacherSubject teacherSubject = teacherSubjectBuilder.build();
@@ -164,7 +169,7 @@ public class TeacherSubjectDaoImpl extends BaseDao implements TeacherSubjectDao 
 
     @Override
     public boolean create(TeacherSubject teacherSubject) throws DaoException {
-        LOGGER.debug("Create teacherSubject.");
+        LOGGER.info("Create teacherSubject.");
         PreparedStatement statement = null;
         try {
             statement = connection.
@@ -192,7 +197,7 @@ public class TeacherSubjectDaoImpl extends BaseDao implements TeacherSubjectDao 
     @Override
     public boolean update(TeacherSubject teacherSubject)
             throws DaoException {
-        LOGGER.debug("Update TeacherSubject.");
+        LOGGER.info("Update TeacherSubject.");
         PreparedStatement statement = null;
         try {
             statement = connection.
@@ -224,7 +229,7 @@ public class TeacherSubjectDaoImpl extends BaseDao implements TeacherSubjectDao 
     @Override
     public List<TeacherSubject> findTeacherSubjectBySurnameTeacher
             (String namePattern) throws DaoException {
-        LOGGER.debug("Start find TeacherSubject by teacher surname.");
+        LOGGER.info("Start find TeacherSubject by teacher surname.");
         List<TeacherSubject> teacherSubjects = new ArrayList<>();
         UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
         UserInfo teacher = builder.build();
@@ -278,7 +283,7 @@ public class TeacherSubjectDaoImpl extends BaseDao implements TeacherSubjectDao 
     @Override
     public List<TeacherSubject> findTeacherSubjectBySubject
             (String namePattern) throws DaoException {
-        LOGGER.debug("Start find TeacherSubject by subject name.");
+        LOGGER.info("Start find TeacherSubject by subject name.");
         List<TeacherSubject> teacherSubjects = new ArrayList<>();
         UserInfo.UserBuilder builder = new UserInfo.UserBuilder();
         UserInfo teacher = builder.build();

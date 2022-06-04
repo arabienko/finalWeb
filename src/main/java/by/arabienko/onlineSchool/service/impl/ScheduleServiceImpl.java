@@ -18,7 +18,7 @@ import java.sql.SQLException;
 import java.util.Comparator;
 import java.util.List;
 
-public class ScheduleServiceImpl implements ScheduleService {
+public class ScheduleServiceImpl extends ServiceImpl implements ScheduleService {
     private static final Logger LOGGER =
             LogManager.getLogger(ScheduleServiceImpl.class);
 
@@ -34,7 +34,7 @@ public class ScheduleServiceImpl implements ScheduleService {
         try {
             transaction = factory.createTransaction();
             transaction.createDao(scheduleDao);
-            schedules = scheduleDao.findAll();
+            schedules = scheduleDao.findAllEntity();
             transaction.commit();
         } catch (DaoException | PersistentException | SQLException e) {
             LOGGER.debug("Service error findAll " + e);

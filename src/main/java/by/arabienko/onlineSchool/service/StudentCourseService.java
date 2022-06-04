@@ -17,7 +17,7 @@ public interface StudentCourseService extends Service {
      * @throws ExceptionService
      * @throws PersistentException
      */
-    List<StudentCourse> findAll() throws ExceptionService, PersistentException;
+    List<StudentCourse> findAll(int offset, int noOfRecords) throws ExceptionService, PersistentException;
 
     /**
      * @param id StudentCourse
@@ -26,6 +26,13 @@ public interface StudentCourseService extends Service {
      * @throws PersistentException
      */
     StudentCourse findEntityById(Long id) throws ExceptionService, PersistentException;
+    /**
+     * @param id Student
+     * @return StudentCourse
+     * @throws ExceptionService
+     * @throws PersistentException
+     */
+    List<StudentCourse> findEntityByStudentId(Long id) throws ExceptionService, PersistentException;
 
     /**
      * @param t StudentCourse

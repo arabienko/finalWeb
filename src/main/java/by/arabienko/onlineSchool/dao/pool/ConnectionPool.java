@@ -3,6 +3,7 @@ package by.arabienko.onlineSchool.dao.pool;
 import by.arabienko.onlineSchool.exception.PersistentException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -52,10 +53,7 @@ final public class ConnectionPool {
                     if (!freeConnections.isEmpty()) {
                         connection = freeConnections.take();
                         if (!connection.isValid(checkConnectionTimeout)) {
-                            try {
-                                connection.getConnection().close();
-                            } catch (SQLException e) {
-                            }
+                            connection.getConnection().close();
                             connection = null;
                         }
                     } else if (usedConnections.size() < maxSize) {
@@ -83,7 +81,7 @@ final public class ConnectionPool {
     }
 
     void freeConnection(
-            PooledConnection connection) {
+            @NotNull PooledConnection connection) {
         lock.lock();
         try {
             try {
@@ -97,13 +95,10 @@ final public class ConnectionPool {
                                     "%d free connection", usedConnections.size(),
                             freeConnections.size()));
                 }
+                connection.getConnection().close();
             } catch (SQLException | InterruptedException e1) {
                 LOGGER.warn("It is impossible " +
                         "to return database connection into pool", e1);
-                try {
-                    connection.getConnection().close();
-                } catch (SQLException e2) {
-                }
             }
         } finally {
             lock.unlock();
@@ -130,7 +125,7 @@ final public class ConnectionPool {
         } catch (ClassNotFoundException |
                 SQLException | InterruptedException e) {
             LOGGER.fatal("It is impossible " +
-                    "to initialize connection pool", e);
+                    "to init connection pool", e);
             throw new PersistentException(e);
         } finally {
             lock.unlock();
@@ -143,7 +138,8 @@ final public class ConnectionPool {
         try {
             instance = new ConnectionPool();
         } catch (SQLException | PersistentException e) {
-            e.printStackTrace();
+            LOGGER.fatal("It is impossible " +
+                    "to initialize connection pool", e);
         }
     }
 
@@ -166,6 +162,8 @@ final public class ConnectionPool {
                 try {
                     connection.getConnection().close();
                 } catch (SQLException e) {
+                    LOGGER.warn("It is impossible " +
+                            "to destroy connection pool", e);
                 }
             }
             usedConnections.clear();
@@ -175,7 +173,7 @@ final public class ConnectionPool {
     }
 
     @Override
-    protected void finalize() throws Throwable {
+    protected void finalize() {
         destroy();
     }
 }

@@ -15,14 +15,14 @@ public class EncodingFilter implements Filter {
             LogManager.getLogger(EncodingFilter.class);
 
     @Override
-    public void init(FilterConfig filterConfig)  throws ServletException {}
+    public void init(FilterConfig filterConfig) {}
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         request.setCharacterEncoding(StandardCharsets.UTF_8.displayName());
         response.setCharacterEncoding(StandardCharsets.UTF_8.displayName());
-        LOGGER.debug("EncodingFilter finished working.");
+        LOGGER.info("EncodingFilter finished working.");
         chain.doFilter(request, response);
     }
 

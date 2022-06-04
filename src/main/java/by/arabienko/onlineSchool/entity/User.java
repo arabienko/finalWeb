@@ -3,16 +3,16 @@ package by.arabienko.onlineSchool.entity;
 public class User extends Entity {
     private String login;
     private String password;
-    private int role;
+    private Integer role;
 
-    public User(Integer ID, String login, String password, int role) {
+    public User(Integer ID, String login, String password, Integer role) {
         super(ID);
         this.login = login;
         this.password = password;
         this.role = role;
     }
 
-    public User(String login, String password, int role) {
+    public User(String login, String password, Integer role) {
         this.login = login;
         this.password = password;
         this.role = role;
@@ -38,11 +38,11 @@ public class User extends Entity {
         this.password = password;
     }
 
-    public int getRole() {
+    public Integer getRole() {
         return role;
     }
 
-    public void setRole(int role) {
+    public void setRole(Integer role) {
         this.role = role;
     }
 

@@ -5,21 +5,11 @@ import by.arabienko.onlineSchool.exception.ExceptionService;
 import by.arabienko.onlineSchool.exception.PersistentException;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * The interface Client service.
  */
-public interface UserService extends Service{
-    /**
-     * Check user by login password optional.
-     *
-     * @param login    the login
-     * @param password the password
-     * @return the optional
-     * @throws ExceptionService the service exception
-     */
-    Optional<User> checkUserByLoginPassword(String login, String password) throws ExceptionService, PersistentException;
+public interface UserService extends Service {
 
     /**
      * Is login unique boolean.
@@ -29,15 +19,6 @@ public interface UserService extends Service{
      * @throws ExceptionService the service exception
      */
     boolean isLoginUnique(String patternLogin) throws ExceptionService, PersistentException;
-
-    /**
-     * Register user boolean.
-     *
-     * @param user the user.
-     * @return the boolean
-     * @throws ExceptionService the service exception
-     */
-    boolean registerUser(User user) throws ExceptionService, PersistentException;
 
     /**
      * Find by id.
@@ -67,11 +48,42 @@ public interface UserService extends Service{
     List<User> findAll() throws ExceptionService, PersistentException;
 
     /**
-     * Find entity by id.
-     *
-     * @param id the id
-     * @return the optional
-     * @throws ExceptionService the service exception
+     * @param patternName
+     * @return user
+     * @throws ExceptionService
+     * @throws PersistentException
      */
-    User findByEntityId(long id) throws ExceptionService, PersistentException;
+    User findUserByLogin(String patternName) throws ExceptionService, PersistentException;
+
+    /**
+     * @param login
+     * @param patternName
+     * @return user
+     * @throws ExceptionService
+     * @throws PersistentException
+     */
+    User findEntityByParam(String login, String patternName) throws ExceptionService, PersistentException;
+
+    /**
+     * @param id
+     * @return student
+     * @throws ExceptionService
+     * @throws PersistentException
+     */
+    User findStudentById(final Long id) throws ExceptionService, PersistentException;
+
+    /**
+     * @param id
+     * @return teacher
+     * @throws ExceptionService
+     * @throws PersistentException
+     */
+    User findTeacherById(final Long id) throws ExceptionService, PersistentException;
+
+    /**
+     * @return admin entity
+     * @throws ExceptionService
+     * @throws PersistentException
+     */
+    User findAdmin() throws PersistentException, ExceptionService;
 }

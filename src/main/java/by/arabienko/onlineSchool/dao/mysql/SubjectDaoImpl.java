@@ -36,7 +36,12 @@ public class SubjectDaoImpl extends BaseDao implements SubjectDao {
             "SELECT nameSubject FROM subjects WHERE nameSubject=?";
 
     @Override
-    public List<Subject> findAll() throws DaoException {
+    public List<Subject> findAll(int offset, int noOfRecords) throws DaoException, SQLException {
+        return null;
+    }
+
+    @Override
+    public List<Subject> findAllEntity() throws DaoException {
         List<Subject> subjects = new ArrayList<>();
         Statement statement = null;
         try {

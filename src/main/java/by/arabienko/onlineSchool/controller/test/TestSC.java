@@ -8,6 +8,6 @@ import java.sql.SQLException;
 public class TestSC {
     public static void main(String[] args) throws DaoException, SQLException {
         StudentCourseDaoImpl studentCourseDao = new StudentCourseDaoImpl();
-        System.out.println(studentCourseDao.findAll());
+        System.out.println(studentCourseDao.findAllEntity());
     }
 }

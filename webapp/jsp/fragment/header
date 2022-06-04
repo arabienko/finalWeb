@@ -1,8 +1,0 @@
-   <html>
-    <head><title>Header</title></head>
-    <body>
-<div class="container-fluid pt-3 my-4 mt-10 border bg-secondary text-white">
-<img class="card-img-top" src="${pageContext.request.contextPath}/img/books.png" alt="Card image" style="width:30%">
-<p class="h1">My First WebProject: Online SCHOOL</p>
-        </div>
-    </body></html>

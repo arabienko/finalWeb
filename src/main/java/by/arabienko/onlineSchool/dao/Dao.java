@@ -21,7 +21,9 @@ import java.util.List;
 public interface Dao<K, T extends Entity> {
     Logger LOGGER = LogManager.getLogger(Dao.class);
 
-    List<T> findAll() throws DaoException, SQLException;
+    List<T> findAll(int offset, int noOfRecords) throws DaoException, SQLException;
+
+    List<T> findAllEntity() throws DaoException, SQLException;
 
     T findEntityById(K id) throws DaoException;
 

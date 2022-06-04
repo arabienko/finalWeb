@@ -3,8 +3,10 @@ package by.arabienko.onlineSchool.service.impl;
 import by.arabienko.onlineSchool.controller.DAOFactory;
 import by.arabienko.onlineSchool.dao.Transaction;
 import by.arabienko.onlineSchool.dao.TransactionFactory;
+import by.arabienko.onlineSchool.dao.UserDao;
 import by.arabienko.onlineSchool.dao.UserInfoDao;
 import by.arabienko.onlineSchool.dao.mysql.TransactionFactoryImpl;
+import by.arabienko.onlineSchool.entity.User;
 import by.arabienko.onlineSchool.entity.UserInfo;
 import by.arabienko.onlineSchool.exception.DaoException;
 import by.arabienko.onlineSchool.exception.ExceptionService;
@@ -18,14 +20,14 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
 
-public class UserInfoServiceImpl implements UserInfoService {
+public class UserInfoServiceImpl extends ServiceImpl implements UserInfoService {
     private static final Logger LOGGER =
             LogManager.getLogger(UserInfoServiceImpl.class);
 
     DAOFactory daoFactory = DAOFactory.getInstance();
     UserInfoDao userInfoDao = daoFactory.getUserInfoDAO();
-    TransactionFactory factory =
-            TransactionFactoryImpl.getInstance();
+    UserDao userDao = daoFactory.getUserDAO();
+    TransactionFactory factory = TransactionFactoryImpl.getInstance();
     Transaction transaction;
 
     @Override
@@ -35,7 +37,7 @@ public class UserInfoServiceImpl implements UserInfoService {
         try {
             transaction = factory.createTransaction();
             transaction.createDao(userInfoDao);
-            result = userInfoDao.findAll();
+            result = userInfoDao.findAllEntity();
             transaction.commit();
         } catch (DaoException | PersistentException | SQLException e) {
             LOGGER.debug("Service error findAll" + e);
@@ -111,16 +113,26 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Override
     public boolean create(UserInfo t)
             throws ExceptionService, PersistentException {
-        boolean result;
+        boolean result = false;
         if (t==null) {
             LOGGER.debug("User entity equals null");
             throw new ExceptionService("User entity equals null");
         }
+        User user = t.getUser();
+        Long id = null;
         try {
             transaction = factory.createTransaction();
-            transaction.createDao(userInfoDao);
-            result = userInfoDao.create(t);
-            transaction.commit();
+            transaction.createDao(userInfoDao,userDao);
+            if (userDao.isLoginUnique(user.getLogin())) {
+                result = userDao.create(user);
+                id = userDao.findUserByLogin(
+                        user.getLogin()).getId();
+            }
+            if (result) {
+                t.setId(id);
+                result = userInfoDao.create(t);
+                transaction.commit();
+            }
         } catch (DaoException | PersistentException e) {
             LOGGER.debug("Service error create " + e);
             transaction.rollback();
@@ -172,7 +184,7 @@ public class UserInfoServiceImpl implements UserInfoService {
             LOGGER.debug("Service error findUserBySurname " + e);
             transaction.rollback();
             throw new ExceptionService(e);
-        }finally {
+        } finally {
             factory.close();
         }
         return result;
@@ -191,7 +203,7 @@ public class UserInfoServiceImpl implements UserInfoService {
             LOGGER.debug("Service error findUserTeacher " + e);
             transaction.rollback();
             throw new ExceptionService(e);
-        }finally {
+        } finally {
             factory.close();
         }
         return result;
@@ -210,7 +222,7 @@ public class UserInfoServiceImpl implements UserInfoService {
             LOGGER.debug("Service error findUserStudent " + e);
             transaction.rollback();
             throw new ExceptionService(e);
-        }finally {
+        } finally {
             factory.close();
         }
         return result;
@@ -229,7 +241,7 @@ public class UserInfoServiceImpl implements UserInfoService {
             LOGGER.debug("Service error findUserAdmin " + e);
             transaction.rollback();
             throw new ExceptionService(e);
-        }finally {
+        } finally {
             factory.close();
         }
         return result;

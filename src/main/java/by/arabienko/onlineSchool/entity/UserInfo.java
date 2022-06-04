@@ -32,8 +32,7 @@ public class UserInfo extends Entity{
     @Override
     public String toString() {
         return surname +" " + name +
-                ", phone: " + phone+
-                ", path : " + pathImage;
+                ", phone: " + phone;
     }
 
     @Override
